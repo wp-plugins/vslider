@@ -1,0 +1,16 @@
+#vSlider ul {
+  list-style: none !important;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+#vSlider ul li {
+  list-style: none !important;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+#sliderbody {
+  overflow: hidden !important;
+}
+#sliderbody img {
+  -ms-interpolation-mode: bicubic;
+}
