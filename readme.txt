@@ -12,7 +12,7 @@ vSlider help you create an image slider featured section in your site. Images ca
 
 **vSlider is a jQuery based image slide show** script that can display specific images on your WordPress based website with fading or sliding transitions. This way you can future the more important pages or products from your website or even other websites.
 
-How is different vSlider from any other WordPress image slider plugins? The answer is simple! It makes use of the core WordPress jQuery library, this makes it very tiny and you don’t have to have any knowledge of coding for using it! But the best part is just to come! It can use images from your posts using custom fields or scanning for images in the post to feature your latest posts from a specific category (for example a featured category), this way with every new post the slider will automatically update it self, so NO extra work for you. Or you can add your own images and where each image links to. vSlider is tested in different browsers and all settings are made from an easy to use options page.
+How is different vSlider from any other WordPress image slider plugins? The answer is simple! It makes use of the core WordPress jQuery library, this makes it very tiny and you don't have to have any knowledge of coding for using it! But the best part is just to come! It can use images from your posts using custom fields or scanning for images in the post to feature your latest posts from a specific category (for example a featured category), this way with every new post the slider will automatically update it self, so NO extra work for you. Or you can add your own images and where each image links to. vSlider is tested in different browsers and all settings are made from an easy to use options page.
 
 You can set up:
 
@@ -33,7 +33,7 @@ After you installed and activated the plugin and placed this code **`<?php if (f
 1. Set up custom CSS code for vSlider (for advanced users) from vSlider options menu.
 1. Add the path to the images and where to link if you want to use custom images.
 
-The vSlider WordPress plugin will scan the posts from the selected category and will show the first image found on the post. The image will be resized as you selected from the slider menu. If the image does not fit well from your post to the slider, simply edit your post, go to custom fields and add a new custom field named “slider” and as value add the path to the image you want to appear in the slider. In this case vSlider will pick the image added in the custom field.
+The vSlider WordPress plugin will scan the posts from the selected category and will show the first image found on the post. The image will be resized as you selected from the slider menu. If the image does not fit well from your post to the slider, simply edit your post, go to custom fields and add a new custom field named "slider" and as value add the path to the image you want to appear in the slider. In this case vSlider will pick the image added in the custom field.
 
 vSlider make use of the [jQuery InnerFade](http://medienfreunde.com/lab/innerfade/ "jQuery InnerFade") script.
 
