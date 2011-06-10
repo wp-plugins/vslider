@@ -6,7 +6,7 @@ Requires at least: 2.7
 Tested up to: 3.1.3
 Stable tag: 4.0
 
-Unlimited image sliders,featured image galleries into your WordPress theme! Join the Vibe at <a href="http://vibethemes.com">VibeThemes</a>
+Unlimited image sliders,featured image galleries into your WordPress theme! Join the Vibe at VibeThemes.
 == Description ==
 Showcase your portfolio, animate your header or manage your banners with vSlider 4.0. vSlider is a wordpress image slider plugin where you can host multiple image sliders and upto 20 slides per slider.<br/>
 = More Features =
@@ -42,30 +42,35 @@ To insert this code in your template/theme pages. (if you have installed php-exe
 
 `<?php if (function_exists('vslider')) { vslider('abc'); }?>` (where `abc` is vslider name)
 
+* Do not Forget to check the vSlider Tutorials and Faq's in vSlider Admin panel inside the Plugin. vSlider Tutorials are updated on a regular basis, you can request for a custom tutorial <a href="http://www.vibethemes.com/forum/forum/vslider-support">here</a>
 Credits: <a href="http://workshop.rs/projects/coin-slider/" target="_blank">Coin Slider</a>, <a href="http://VibeThemes.com" target="_blank">VibeThemes</a>
 
 == Installation ==
-<b>Method 1</b>
-1. Download the zipped plugin file to your local machine.
-2. Go to WordPress admin -> Plugins menu
-3. Add New->Upload->browse the zipped plugin
-4. Upload and Activate
-<b>Method 2</b>
-1. Download the zipped plugin file to your local machine.
-2. Unzip the file.
-3. Upload the "vslider" folder to the "/wp-content/plugins/" directory. (DO NOT CHANGE ANY FILE OR FOLDER NAMES)
-4. Activate the plugin through the "Plugins" menu in WordPress.
 
-=Usage=
-1. Use shortcode `[vslider name='abc']` in your posts to show vslider 4.0.
-2. In the Appearance -> Widgets add vSlider widget to your sidebar.
-3. Add the folowing code anywhere within your theme where you want the vSlider to be displayed: `<?php if(function_exists('vslider')) { vslider('abc'); } ?>` (where abc is the name of the vslider you want to be displayed) 
+=Method 1=
+<ul>
+<li>Download the zipped plugin file to your local machine.</li>
+<li>Go to WordPress admin -> Plugins menu</li>
+<li>Add New->Upload->browse the zipped plugin</li>
+<li>Upload and Activate</li>
+</ul>
+=Method 2=
+<ul>
+<li>1. Download the zipped plugin file to your local machine.</li>
+<li>2. Unzip the file.</li>
+<li>3. Upload the "vslider" folder to the "/wp-content/plugins/" directory. (DO NOT CHANGE ANY FILE OR FOLDER NAMES)</li>
+<li>4. Activate the plugin through the "Plugins" menu in WordPress.</li>
 
-
-`<a href="http://vibethemes/forum/" target="_blank">vSlider installation issues and support forum</a>` 
+* Do not Forget to check vSlider Admin Menu
+=Installation Help & Support=
+<a href="http://www.vibethemes.com/forum/forum/vslider-support">vSlider Support Forums</a>
+ 
 
 == Frequently Asked Questions ==
-* Use Tutorials and Faq's in the vSlider menu
+* Use Tutorials and Faq's in the vSlider Admin menu
+=Free vSlider Support=
+<a href="http://www.vibethemes.com/forum/forum/vslider-support">vSlider Support Forums</a>
+ 
 
 == Screenshots ==
 For Demo <a href="http://www.vibethemes.com/introducing-vslider-4-0/">Click Here</a>
