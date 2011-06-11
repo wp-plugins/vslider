@@ -41,7 +41,7 @@ function get_vsliders()
        <form method="post" action="?page=vslider&add=1">
        <tr style="height:60px;"> <td style="width: 100px;text-align:center;padding: 20px;"><?php echo ($data->id+1); ?> </td>
        <td style="padding: 20px;" colspan="2"><input type="text" id="option_name" name="option_name" size="70" />
-       <font style="font-size:10px;">&nbsp;&nbsp;&nbsp;&nbsp;* Do not use spaces, special characters in the name.</font>
+       <font style="font-size:10px;">&nbsp;&nbsp;&nbsp;&nbsp;* Case Sensitive, Do not use spaces, special characters or numbers in the name.</font>
        </td>
        <td style="width: 100px;text-align:center;padding: 20px;" colspan="2"><input type="submit" class="button-primary" style="padding: 10px 30px 10px 30px;" value="Add new vSlider" />  </td>
        </tr>
@@ -179,7 +179,7 @@ var $jq = jQuery.noConflict(); $jq(document).ready(function() {
         echo '#cs-buttons-'.$option.' { display: none; }';
     } 
      ?>
-    #<?php echo $option; ?> .cs-buttons {clear:both; font-size: 0px; margin: <?php echo $options['navplace']; ?>; float: left; }
+     .cs-buttons {clear:both; font-size: 0px; margin: <?php echo $options['navplace']; ?>; float: left; }
        #cs-button-<?php echo $option; ?>{ z-index:999;}
      <?php
      switch ($options['navstyle']){
@@ -189,7 +189,7 @@ var $jq = jQuery.noConflict(); $jq(document).ready(function() {
                                               -moz-border-radius: 5px;
                                               border-radius: 5px;
                                             }
-                              .cs-buttons a { margin-left: 5px; height: 5px; width: 5px; float: left; 
+                               .cs-buttons a { margin-left: 5px; height: 5px; width: 5px; float: left; 
                                                background: #<?php echo $options['bgColor']; ?>;
                                                text-indent: -1000px;
                                                -webkit-border-radius: 5px;
@@ -200,11 +200,11 @@ var $jq = jQuery.noConflict(); $jq(document).ready(function() {
                                                     echo "clear: both;margin-bottom:5px;";
                                                 }  ?>
                                                 }              
-                               a.cs-active { background-color: #<?php echo $options['textColor']; ?>; }          
+                                a.cs-active { background-color: #<?php echo $options['textColor']; ?>; }          
             <?php break;
         }
         case 'nav_style1':  { ?>
-                              .cs-buttons a { margin-left: 5px; height: 16px; width: 15px; float: left; 
+                               .cs-buttons a { margin-left: 5px; height: 16px; width: 15px; float: left; 
                                                text-indent: -999px;
                                                background: url('<?php echo WP_CONTENT_URL;?>/plugins/vslider/images/nav_style1.png') no-repeat;
                                                background-position: left;
@@ -213,7 +213,7 @@ var $jq = jQuery.noConflict(); $jq(document).ready(function() {
                                                     echo "clear: both;margin-bottom:5px;";
                                                 }  ?>
                                                }             
-                                .cs-buttons a:hover, a.cs-active { background: url('<?php echo WP_CONTENT_URL;?>/plugins/vslider/images/nav_style1.png') no-repeat;background-position: right; }          
+                                 .cs-buttons a:hover, a.cs-active { background: url('<?php echo WP_CONTENT_URL;?>/plugins/vslider/images/nav_style1.png') no-repeat;background-position: right; }          
             <?php break;
         }
         
@@ -238,7 +238,7 @@ var $jq = jQuery.noConflict(); $jq(document).ready(function() {
         }
         
         case 'nav_style3':  { ?>
-                              .cs-buttons a { margin-left: 5px; height: 33px; width: 33px; float: left; 
+                               .cs-buttons a { margin-left: 5px; height: 33px; width: 33px; float: left; 
                                                text-indent: -999px;
                                                background: url('<?php echo WP_CONTENT_URL;?>/plugins/vslider/images/nav_2.png') no-repeat;
                                               <?php if($options['vnavenable'])
@@ -263,7 +263,7 @@ var $jq = jQuery.noConflict(); $jq(document).ready(function() {
             <?php break;
         }
         case 'nav_style5':  { ?>
-                                .cs-buttons a { margin-left: 5px; height: 14px; width: 14px; float: left; 
+                               .cs-buttons a { margin-left: 5px; height: 14px; width: 14px; float: left; 
                                                background: url('<?php echo WP_CONTENT_URL;?>/plugins/vslider/images/nav_style5.png') no-repeat;
                                                background-position: top;
                                               <?php if($options['vnavenable'])
@@ -293,24 +293,24 @@ var $jq = jQuery.noConflict(); $jq(document).ready(function() {
      }
 switch($options['arrstyle']){
     case 'arr_style1':{ ?>
-        #<?php echo $option; ?> .cs-prev {margin-left:8px; line-height: 50px;width: 50px;height:50px; background: url('<?php echo WP_CONTENT_URL;?>/plugins/vslider/images/nav_style1_arrows-prev.png')no-repeat; text-indent: -999px;}
-        #<?php echo $option; ?> .cs-next {margin-right: 5px; line-height: 50px;width: 50px;height:50px; background: url('<?php echo WP_CONTENT_URL;?>/plugins/vslider/images/nav_style1_arrows-next.png')no-repeat; text-indent: -999px;}
+        .cs-prev {margin-left:8px; line-height: 50px;width: 50px;height:50px; background: url('<?php echo WP_CONTENT_URL;?>/plugins/vslider/images/nav_style1_arrows-prev.png')no-repeat; text-indent: -999px;}
+        .cs-next {margin-right: 5px; line-height: 50px;width: 50px;height:50px; background: url('<?php echo WP_CONTENT_URL;?>/plugins/vslider/images/nav_style1_arrows-next.png')no-repeat; text-indent: -999px;}
         <?php break;
     }
     case 'arr_style2':{?>
-        #<?php echo $option; ?> .cs-prev {margin-left:8px; line-height: 30px;width: 30px;height:30px; background: url('<?php echo WP_CONTENT_URL;?>/plugins/vslider/images/nav_style2_arrows-prev.png')no-repeat; text-indent: -999px;}
-        #<?php echo $option; ?> .cs-next {margin-right: 5px; line-height: 30px;width: 30px;height:30px; background: url('<?php echo WP_CONTENT_URL;?>/plugins/vslider/images/nav_style2_arrows-next.png')no-repeat; text-indent: -999px;}
+        .cs-prev {margin-left:8px; line-height: 30px;width: 30px;height:30px; background: url('<?php echo WP_CONTENT_URL;?>/plugins/vslider/images/nav_style2_arrows-prev.png')no-repeat; text-indent: -999px;}
+        .cs-next {margin-right: 5px; line-height: 30px;width: 30px;height:30px; background: url('<?php echo WP_CONTENT_URL;?>/plugins/vslider/images/nav_style2_arrows-next.png')no-repeat; text-indent: -999px;}
     <?php       
         break;
     }
     case 'arr_style3':{ ?>
-            #<?php echo $option; ?> .cs-prev {margin-left:8px; line-height: 50px;width: 50px;height:50px; background: url('<?php echo WP_CONTENT_URL;?>/plugins/vslider/images/nav_style3_arrows-prev.png')no-repeat; text-indent: -999px;}
-            #<?php echo $option; ?> .cs-next {margin-right: 5px; line-height: 50px;width: 50px;height:50px; background: url('<?php echo WP_CONTENT_URL;?>/plugins/vslider/images/nav_style3_arrows-next.png')no-repeat; text-indent: -999px;}
+            .cs-prev {margin-left:8px; line-height: 50px;width: 50px;height:50px; background: url('<?php echo WP_CONTENT_URL;?>/plugins/vslider/images/nav_style3_arrows-prev.png')no-repeat; text-indent: -999px;}
+            .cs-next {margin-right: 5px; line-height: 50px;width: 50px;height:50px; background: url('<?php echo WP_CONTENT_URL;?>/plugins/vslider/images/nav_style3_arrows-next.png')no-repeat; text-indent: -999px;}
     <?php
         break;
     }
     default:{?>
-             #<?php echo $option; ?> .cs-prev, .cs-next {font-weight: bold;background: #<?php echo $options['bgColor']; ?> !important;font-size: 28px !important;font-family: "Courier New", Courier, monospace;color: #<?php echo $options['textColor']; ?> 
+             .cs-prev, .cs-next {font-weight: bold;background: #<?php echo $options['bgColor']; ?> !important;font-size: 28px !important;font-family: "Courier New", Courier, monospace;color: #<?php echo $options['textColor']; ?> 
 !important;padding: 0px 10px !important;-moz-border-radius: 5px;-khtml-border-radius: 5px;-webkit-border-radius: 5px;}
     <?php }
 }
@@ -451,9 +451,11 @@ function vslider_main()
 {
     ?>
     <div class="wrap" style="width:820px;"><div id="icon-options-general" class="icon32"><br /></div>
-    <h2 style="margin-bottom:20px;">vSlider 4.0 Settings</h2>
+    <h2>vSlider 4.0 Settings</h2>
     <div class="metabox-holder" style="width: 820px; float:left;">
+    <small>Welcome to vSlider 4.0</small>
      <div class="inside">
+     <br />
      </div>
      </div>
 <?php
@@ -462,22 +464,17 @@ function vslider_main()
 if($_GET['add'])
 {
     $option=$_POST['option_name'];
-    if($option !='')
-    {
     $option = preg_replace('/[^a-z0-9\s]/i', '', $option);  
     $option = str_replace(" ", "_", $option);
     global $wpdb;
 	$table_name = $wpdb->prefix . "vslider"; 
     $sql = "INSERT INTO " . $table_name . " values ('','".$option."','1');";
     if($wpdb->query( $sql ) === false)
-     {
+    {
         $v_message= ' Unable to Add vSlider';
-     }else{
+    }else{
         $v_message= ' vSlider successfully added';
         add_option($option, vslider_defaults());
-     }
-    }else{
-        $v_message= ' Unable to Add vSlider';
     };
     
     ?>
@@ -573,10 +570,10 @@ if($_GET['activate'])
         <div id="vsliderdonatebox" style="display:none;">
         <?php _e('Donate Amount'); ?>:
         <small>
-        <a href="https://www.paypal.com/cgi-bin/webscr?cmd=_xclick&business=99fusion%40gmail.com&item_name=vSlider Donation&no_note=1&tax=0&amount=19&currency_code=USD" target="_blank">$19 USD</a> |
-        <a href="https://www.paypal.com/cgi-bin/webscr?cmd=_xclick&business=99fusion%40gmail.com&item_name=vSlider Donation&no_note=1&tax=0&amount=9&currency_code=USD" target="_blank">$9 USD</a> |
-        <a href="https://www.paypal.com/cgi-bin/webscr?cmd=_xclick&business=99fusion%40gmail.com&item_name=vSlider Donation&no_note=1&tax=0&amount=6&currency_code=USD" target="_blank">$6 USD</a> |
-        <a href="https://www.paypal.com/cgi-bin/webscr?cmd=_xclick&business=99fusion%40gmail.com&item_name=vSlider Donation&no_note=1&tax=0&amount=3&currency_code=USD" target="_blank">$3 USD</a>
+        <a href="https://www.paypal.com/cgi-bin/webscr?cmd=_xclick&business=99fusion%40gmail.com&item_name=vSlider Donation&no_note=1&tax=0&amount=20&currency_code=USD" target="_blank">$19 USD</a> |
+        <a href="https://www.paypal.com/cgi-bin/webscr?cmd=_xclick&business=99fusion%40gmail.com&item_name=vSlider Donation&no_note=1&tax=0&amount=10&currency_code=USD" target="_blank">$9 USD</a> |
+        <a href="https://www.paypal.com/cgi-bin/webscr?cmd=_xclick&business=99fusion%40gmail.com&item_name=vSlider Donation&no_note=1&tax=0&amount=5&currency_code=USD" target="_blank">$4 USD</a> |
+        <a href="https://www.paypal.com/cgi-bin/webscr?cmd=_xclick&business=99fusion%40gmail.com&item_name=vSlider Donation&no_note=1&tax=0&amount=1&currency_code=USD" target="_blank">$1 USD</a>
         </small></div>
         <div id="vsliderlink" style="display:none;margin:5px 2px 2px 2px">
         <?php _e('Confirm text link in the Footer'); ?> : <form method="post" style="float: right;margin-right: 250px;" action="?page=vslider"><input type="submit" style="padding: 3px 10px 3px 10px;" class="button-primary" name="link" value="Add Link" /></form>
@@ -750,7 +747,12 @@ $options = get_option($option);
                </p>
                <p> <?php _e("Category:", 'vslider'); ?>
                 <?php wp_dropdown_categories(array('selected' => $options['imgCat'], 'name' => $option.'[imgCat]', 'orderby' => 'Name' , 'hierarchical' => 1, 'show_option_all' => __("All Categories", 'vslider'), 'hide_empty' => '0' )); ?>
-               </p>
+                &nbsp;&nbsp;<?php _e("Grab Post Image:", 'vslider'); ?>
+                <select name="<?php echo $option; ?>[catchimage]">
+                    <option value="true" <?php selected('true', $options['excerpt']); ?>>Featured</option>
+                    <option value="false" <?php selected('false', $options['excerpt']); ?>>First Image</option>
+                </select>
+                </p>
                 <p><?php _e("Slides", 'vslider'); ?>:
                 <select name="<?php echo $option; ?>[slideNr]">
                 <?php for($s=1; $s<21; $s++){ ?>
