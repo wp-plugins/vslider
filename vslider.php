@@ -570,10 +570,10 @@ if($_GET['activate'])
         <div id="vsliderdonatebox" style="display:none;">
         <?php _e('Donate Amount'); ?>:
         <small>
-        <a href="https://www.paypal.com/cgi-bin/webscr?cmd=_xclick&business=99fusion%40gmail.com&item_name=vSlider Donation&no_note=1&tax=0&amount=20&currency_code=USD" target="_blank">$19 USD</a> |
-        <a href="https://www.paypal.com/cgi-bin/webscr?cmd=_xclick&business=99fusion%40gmail.com&item_name=vSlider Donation&no_note=1&tax=0&amount=10&currency_code=USD" target="_blank">$9 USD</a> |
-        <a href="https://www.paypal.com/cgi-bin/webscr?cmd=_xclick&business=99fusion%40gmail.com&item_name=vSlider Donation&no_note=1&tax=0&amount=5&currency_code=USD" target="_blank">$4 USD</a> |
-        <a href="https://www.paypal.com/cgi-bin/webscr?cmd=_xclick&business=99fusion%40gmail.com&item_name=vSlider Donation&no_note=1&tax=0&amount=1&currency_code=USD" target="_blank">$1 USD</a>
+        <a href="https://www.paypal.com/cgi-bin/webscr?cmd=_xclick&business=99fusion%40gmail.com&item_name=vSlider Donation&no_note=1&tax=0&amount=19&currency_code=USD" target="_blank">$19 USD</a> |
+        <a href="https://www.paypal.com/cgi-bin/webscr?cmd=_xclick&business=99fusion%40gmail.com&item_name=vSlider Donation&no_note=1&tax=0&amount=9&currency_code=USD" target="_blank">$9 USD</a> |
+        <a href="https://www.paypal.com/cgi-bin/webscr?cmd=_xclick&business=99fusion%40gmail.com&item_name=vSlider Donation&no_note=1&tax=0&amount=6&currency_code=USD" target="_blank">$6 USD</a> |
+        <a href="https://www.paypal.com/cgi-bin/webscr?cmd=_xclick&business=99fusion%40gmail.com&item_name=vSlider Donation&no_note=1&tax=0&amount=3&currency_code=USD" target="_blank">$3 USD</a>
         </small></div>
         <div id="vsliderlink" style="display:none;margin:5px 2px 2px 2px">
         <?php _e('Confirm text link in the Footer'); ?> : <form method="post" style="float: right;margin-right: 250px;" action="?page=vslider"><input type="submit" style="padding: 3px 10px 3px 10px;" class="button-primary" name="link" value="Add Link" /></form>
