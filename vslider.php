@@ -1,7 +1,7 @@
 <?php
 /*
     Plugin Name: vSlider
-    Plugin URI: http://www.vibethemes.com/introducing-vslider-4-0/
+    Plugin URI: http://www.Vibethemes.com/vslider-wordpress-image-slider-plugin/
     Description: Implementing a featured image gallery into your WordPress theme has never been easier! Showcase your portfolio, animate your header or manage your banners with vSlider. vslider by  <a href="http://www.vibethemes.com/" title="premium wordpress themes">VibeThemes</a>.
     Author: Mr.Vibe
     Version: 4.0
@@ -41,7 +41,7 @@ function get_vsliders()
        <form method="post" action="?page=vslider&add=1">
        <tr style="height:60px;"> <td style="width: 100px;text-align:center;padding: 20px;"><?php echo ($data->id+1); ?> </td>
        <td style="padding: 20px;" colspan="2"><input type="text" id="option_name" name="option_name" size="70" />
-       <font style="font-size:10px;">&nbsp;&nbsp;&nbsp;&nbsp;* Case Sensitive, Do not use spaces, special characters or numbers in the name.</font>
+       <font style="font-size:10px;">&nbsp;&nbsp;&nbsp;&nbsp;* Do not use spaces or special characters in the name.</font>
        </td>
        <td style="width: 100px;text-align:center;padding: 20px;" colspan="2"><input type="submit" class="button-primary" style="padding: 10px 30px 10px 30px;" value="Add new vSlider" />  </td>
        </tr>
@@ -67,7 +67,7 @@ if ( $_GET['page'] == 'vslider-themes' ) {
     add_action('admin_init', 'vslider_theme_scripts');
     add_action('admin_print_styles', 'vslider_theme_styles');
 }
-
+//Scripts to be loaded in the vSlider admin Panel
 function vslider_admin_scripts() {
     wp_enqueue_script  ('media-upload');
     wp_enqueue_script  ('thickbox');
@@ -90,6 +90,7 @@ function vslider_theme_scripts() {
     wp_register_script ( 'themes-js', WP_CONTENT_URL.'/plugins/vslider/js/themes.js', array('jquery'));
     wp_enqueue_script  ('themes-js' );
 } 
+//Styles to be loaded in the vSlider admin Panel
 function vslider_admin_styles() {
     wp_enqueue_style('thickbox');
     wp_register_style('colorpicker-css', WP_CONTENT_URL.'/plugins/vslider/picker/colorpicker.css');
@@ -105,14 +106,16 @@ function vslider_theme_styles() {
     wp_register_style('themes-css', WP_CONTENT_URL.'/plugins/vslider/css/themes.css');
     wp_enqueue_style( 'themes-css');
     }
-// ADD VSLIDER JS TO THEME HEAD SECTION
+
 add_action('wp_print_scripts', 'vslider_head_scripts');
 
+// ADD VSLIDER JS TO THEME HEAD SECTION
 function vslider_head_scripts() {
     wp_enqueue_script ('jquery'); 
 	wp_enqueue_script('vslider', WP_CONTENT_URL.'/plugins/vslider/js/vslider.js', $deps = array('jquery'));
 }
 
+// ADD VSLIDER HEAD STYLES
 function vslider_head($option) { 
     $options = get_option($option); ?>
 <!-- Start vSlider options -->
@@ -179,17 +182,18 @@ var $jq = jQuery.noConflict(); $jq(document).ready(function() {
         echo '#cs-buttons-'.$option.' { display: none; }';
     } 
      ?>
-     .cs-buttons {clear:both; font-size: 0px; margin: <?php echo $options['navplace']; ?>; float: left; }
+    #<?php echo $option; ?>container .cs-buttons {clear:both; font-size: 0px; margin: <?php echo $options['navplace']; ?>; float: left; }
        #cs-button-<?php echo $option; ?>{ z-index:999;}
      <?php
      switch ($options['navstyle']){
-        case 'nav_small':  { ?>.cs-buttons { font-size: 0px; margin: 8px 0 0 8px;padding: 8px 8px 8px 5px; float: left; 
+        case 'nav_small':  { ?>
+       #<?php echo $option; ?>container .cs-buttons { font-size: 0px; margin: 8px 0 0 8px;padding: 8px 8px 8px 5px; float: left; 
                                              background: #dfdfdf;
                                               -webkit-border-radius: 5px;
                                               -moz-border-radius: 5px;
                                               border-radius: 5px;
                                             }
-                               .cs-buttons a { margin-left: 5px; height: 5px; width: 5px; float: left; 
+                              #<?php echo $option; ?>container .cs-buttons a { margin-left: 5px; height: 5px; width: 5px; float: left; 
                                                background: #<?php echo $options['bgColor']; ?>;
                                                text-indent: -1000px;
                                                -webkit-border-radius: 5px;
@@ -200,11 +204,11 @@ var $jq = jQuery.noConflict(); $jq(document).ready(function() {
                                                     echo "clear: both;margin-bottom:5px;";
                                                 }  ?>
                                                 }              
-                                a.cs-active { background-color: #<?php echo $options['textColor']; ?>; }          
+                             #<?php echo $option; ?>container   a.cs-active { background-color: #<?php echo $options['textColor']; ?>; }          
             <?php break;
         }
         case 'nav_style1':  { ?>
-                               .cs-buttons a { margin-left: 5px; height: 16px; width: 15px; float: left; 
+                            #<?php echo $option; ?>container   .cs-buttons a { margin-left: 5px; height: 16px; width: 15px; float: left; 
                                                text-indent: -999px;
                                                background: url('<?php echo WP_CONTENT_URL;?>/plugins/vslider/images/nav_style1.png') no-repeat;
                                                background-position: left;
@@ -213,12 +217,12 @@ var $jq = jQuery.noConflict(); $jq(document).ready(function() {
                                                     echo "clear: both;margin-bottom:5px;";
                                                 }  ?>
                                                }             
-                                 .cs-buttons a:hover, a.cs-active { background: url('<?php echo WP_CONTENT_URL;?>/plugins/vslider/images/nav_style1.png') no-repeat;background-position: right; }          
+                              #<?php echo $option; ?>container   .cs-buttons a:hover, a.cs-active { background: url('<?php echo WP_CONTENT_URL;?>/plugins/vslider/images/nav_style1.png') no-repeat;background-position: right; }          
             <?php break;
         }
         
         case 'nav_style2':  { ?>
-                               .cs-buttons a { margin-left: 5px; height: 15px; width: 15px; float: left; 
+                             #<?php echo $option; ?>container  .cs-buttons a { margin-left: 5px; height: 15px; width: 15px; float: left; 
                                                text-indent: -999px; background: #dfdfdf;
                                                border: 5px solid #c6c6c6; 
                                                text-indent: -1000px; 
@@ -232,13 +236,13 @@ var $jq = jQuery.noConflict(); $jq(document).ready(function() {
                                                 }  ?>
                                                }             
                                  
-                                 .cs-buttons a:hover  { background: #efefef; border-color: #444;}
-                                 a.cs-active { background: #efefef; border-color: #444;}          
+                              #<?php echo $option; ?>container   .cs-buttons a:hover  { background: #efefef; border-color: #444;}
+                              #<?php echo $option; ?>container   a.cs-active { background: #efefef; border-color: #444;}          
             <?php break;
         }
         
         case 'nav_style3':  { ?>
-                               .cs-buttons a { margin-left: 5px; height: 33px; width: 33px; float: left; 
+                              #<?php echo $option; ?>container .cs-buttons a { margin-left: 5px; height: 33px; width: 33px; float: left; 
                                                text-indent: -999px;
                                                background: url('<?php echo WP_CONTENT_URL;?>/plugins/vslider/images/nav_2.png') no-repeat;
                                               <?php if($options['vnavenable'])
@@ -246,12 +250,12 @@ var $jq = jQuery.noConflict(); $jq(document).ready(function() {
                                                     echo "clear: both;margin-bottom:5px;";
                                                 }  ?> 
                                                }             
-                                 .cs-buttons a:hover, a.cs-active { background: url('<?php echo WP_CONTENT_URL;?>/plugins/vslider/images/nav_2_active.png') no-repeat; }          
+                               #<?php echo $option; ?>container  .cs-buttons a:hover, a.cs-active { background: url('<?php echo WP_CONTENT_URL;?>/plugins/vslider/images/nav_2_active.png') no-repeat; }          
             <?php break;
         }
         
         case 'nav_style4':  { ?>
-                               .cs-buttons a { margin-left: 5px; height: 12px; width: 12px; float: left; 
+                             #<?php echo $option; ?>container  .cs-buttons a { margin-left: 5px; height: 12px; width: 12px; float: left; 
                                                background: url('<?php echo WP_CONTENT_URL;?>/plugins/vslider/images/nav_style4.png') no-repeat;
                                                background-position: left;
                                               <?php if($options['vnavenable'])
@@ -259,11 +263,11 @@ var $jq = jQuery.noConflict(); $jq(document).ready(function() {
                                                     echo "clear: both;margin-bottom:5px;";
                                                 }  ?>
                                                }             
-                                 .cs-buttons a:hover, a.cs-active { background: url('<?php echo WP_CONTENT_URL;?>/plugins/vslider/images/nav_style4.png') no-repeat;background-position: right; }          
+                              #<?php echo $option; ?>container   .cs-buttons a:hover, a.cs-active { background: url('<?php echo WP_CONTENT_URL;?>/plugins/vslider/images/nav_style4.png') no-repeat;background-position: right; }          
             <?php break;
         }
         case 'nav_style5':  { ?>
-                               .cs-buttons a { margin-left: 5px; height: 14px; width: 14px; float: left; 
+                              #<?php echo $option; ?>container .cs-buttons a { margin-left: 5px; height: 14px; width: 14px; float: left; 
                                                background: url('<?php echo WP_CONTENT_URL;?>/plugins/vslider/images/nav_style5.png') no-repeat;
                                                background-position: top;
                                               <?php if($options['vnavenable'])
@@ -271,21 +275,21 @@ var $jq = jQuery.noConflict(); $jq(document).ready(function() {
                                                     echo "clear: both;margin-bottom:5px;";
                                                 }  ?>
                                                }             
-                                .cs-buttons a:hover, a.cs-active { background: url('<?php echo WP_CONTENT_URL;?>/plugins/vslider/images/nav_style5.png') no-repeat;background-position: bottom; }          
+                               #<?php echo $option; ?>container .cs-buttons a:hover, a.cs-active { background: url('<?php echo WP_CONTENT_URL;?>/plugins/vslider/images/nav_style5.png') no-repeat;background-position: bottom; }          
             <?php break;
         }
         
         default: { ?>
-            .cs-buttons { font-size: 0px; padding: 10px; float: left; }
-            .cs-buttons a { margin-left: 5px; height: 15px; width: 15px; float: left; 
+           #<?php echo $option; ?>container .cs-buttons { font-size: 0px; padding: 10px; float: left; }
+           #<?php echo $option; ?>container .cs-buttons a { margin-left: 5px; height: 15px; width: 15px; float: left; 
                             background: url('<?php echo WP_CONTENT_URL;?>/plugins/vslider/images/default_style.png') no-repeat;background-position:top;
                                                 text-indent: -1000px;
                             <?php if($options['vnavenable'])
                                                 {
                                                     echo "clear: both;margin-bottom:5px;";
                                                 }  ?> }
-              .cs-buttons a:hover  { background: url('<?php echo WP_CONTENT_URL;?>/plugins/vslider/images/default_style.png') no-repeat;background-position: bottom;top:15px;}
-              a.cs-active { background: url('<?php echo WP_CONTENT_URL;?>/plugins/vslider/images/default_style.png') no-repeat;background-position:bottom;}          
+             #<?php echo $option; ?>container .cs-buttons a:hover  { background: url('<?php echo WP_CONTENT_URL;?>/plugins/vslider/images/default_style.png') no-repeat;background-position: bottom;top:15px;}
+            #<?php echo $option; ?>container  a.cs-active { background: url('<?php echo WP_CONTENT_URL;?>/plugins/vslider/images/default_style.png') no-repeat;background-position:bottom;}          
                                 
         
             <?php
@@ -293,24 +297,24 @@ var $jq = jQuery.noConflict(); $jq(document).ready(function() {
      }
 switch($options['arrstyle']){
     case 'arr_style1':{ ?>
-        .cs-prev {margin-left:8px; line-height: 50px;width: 50px;height:50px; background: url('<?php echo WP_CONTENT_URL;?>/plugins/vslider/images/nav_style1_arrows-prev.png')no-repeat; text-indent: -999px;}
-        .cs-next {margin-right: 5px; line-height: 50px;width: 50px;height:50px; background: url('<?php echo WP_CONTENT_URL;?>/plugins/vslider/images/nav_style1_arrows-next.png')no-repeat; text-indent: -999px;}
+      #<?php echo $option; ?>  .cs-prev {margin-left:8px; line-height: 50px;width: 50px;height:50px; background: url('<?php echo WP_CONTENT_URL;?>/plugins/vslider/images/nav_style1_arrows-prev.png')no-repeat; text-indent: -999px;}
+      #<?php echo $option; ?>  .cs-next {margin-right: 5px; line-height: 50px;width: 50px;height:50px; background: url('<?php echo WP_CONTENT_URL;?>/plugins/vslider/images/nav_style1_arrows-next.png')no-repeat; text-indent: -999px;}
         <?php break;
     }
     case 'arr_style2':{?>
-        .cs-prev {margin-left:8px; line-height: 30px;width: 30px;height:30px; background: url('<?php echo WP_CONTENT_URL;?>/plugins/vslider/images/nav_style2_arrows-prev.png')no-repeat; text-indent: -999px;}
-        .cs-next {margin-right: 5px; line-height: 30px;width: 30px;height:30px; background: url('<?php echo WP_CONTENT_URL;?>/plugins/vslider/images/nav_style2_arrows-next.png')no-repeat; text-indent: -999px;}
+      #<?php echo $option; ?>  .cs-prev {margin-left:8px; line-height: 30px;width: 30px;height:30px; background: url('<?php echo WP_CONTENT_URL;?>/plugins/vslider/images/nav_style2_arrows-prev.png')no-repeat; text-indent: -999px;}
+      #<?php echo $option; ?>  .cs-next {margin-right: 5px; line-height: 30px;width: 30px;height:30px; background: url('<?php echo WP_CONTENT_URL;?>/plugins/vslider/images/nav_style2_arrows-next.png')no-repeat; text-indent: -999px;}
     <?php       
         break;
     }
     case 'arr_style3':{ ?>
-            .cs-prev {margin-left:8px; line-height: 50px;width: 50px;height:50px; background: url('<?php echo WP_CONTENT_URL;?>/plugins/vslider/images/nav_style3_arrows-prev.png')no-repeat; text-indent: -999px;}
-            .cs-next {margin-right: 5px; line-height: 50px;width: 50px;height:50px; background: url('<?php echo WP_CONTENT_URL;?>/plugins/vslider/images/nav_style3_arrows-next.png')no-repeat; text-indent: -999px;}
+          #<?php echo $option; ?>  .cs-prev {margin-left:8px; line-height: 50px;width: 50px;height:50px; background: url('<?php echo WP_CONTENT_URL;?>/plugins/vslider/images/nav_style3_arrows-prev.png')no-repeat; text-indent: -999px;}
+          #<?php echo $option; ?>  .cs-next {margin-right: 5px; line-height: 50px;width: 50px;height:50px; background: url('<?php echo WP_CONTENT_URL;?>/plugins/vslider/images/nav_style3_arrows-next.png')no-repeat; text-indent: -999px;}
     <?php
         break;
     }
     default:{?>
-             .cs-prev, .cs-next {font-weight: bold;background: #<?php echo $options['bgColor']; ?> !important;font-size: 28px !important;font-family: "Courier New", Courier, monospace;color: #<?php echo $options['textColor']; ?> 
+           #<?php echo $option; ?>  .cs-prev,#<?php echo $option; ?> .cs-next {font-weight: bold;background: #<?php echo $options['bgColor']; ?> !important;font-size: 28px !important;font-family: "Courier New", Courier, monospace;color: #<?php echo $options['textColor']; ?> 
 !important;padding: 0px 10px !important;-moz-border-radius: 5px;-khtml-border-radius: 5px;-webkit-border-radius: 5px;}
     <?php }
 }
@@ -464,6 +468,7 @@ function vslider_main()
 if($_GET['add'])
 {
     $option=$_POST['option_name'];
+    if($option){
     $option = preg_replace('/[^a-z0-9\s]/i', '', $option);  
     $option = str_replace(" ", "_", $option);
     global $wpdb;
@@ -476,7 +481,9 @@ if($_GET['add'])
         $v_message= ' vSlider successfully added';
         add_option($option, vslider_defaults());
     };
-    
+    }else{
+        $v_message= ' Unable to Add vSlider';
+    }
     ?>
 <div class="updated" id="message"><p><strong>
     <?php echo $v_message; ?>
