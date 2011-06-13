@@ -1,10 +1,10 @@
-=== vSlider 4.0 ===
+=== vSlider Multi Image Slider plugin ===
 Contributors: Mr. Vibe
 Donate link: http://vibethemes.com/plugins/
 Tags: mutiple image slider,banner, slider, sidebar, widget, plugin,vslider,wordpress image slider plugin
 Requires at least: 2.7
 Tested up to: 3.1.3
-Stable tag: 4.0
+Stable tag: 4.0.1
 
 Unlimited image sliders,featured image galleries into your WordPress theme! Join the Vibe at VibeThemes.
 == Description ==
@@ -43,7 +43,7 @@ To insert this code in your template/theme pages. (if you have installed php-exe
 `<?php if (function_exists('vslider')) { vslider('abc'); }?>` (where `abc` is vslider name)
 
 * Do not Forget to check the vSlider Tutorials and Faq's in vSlider Admin panel inside the Plugin. vSlider Tutorials are updated on a regular basis, you can request for a custom tutorial <a href="http://www.vibethemes.com/forum/forum/vslider-support">here</a>
-*Credits: <a href="http://workshop.rs/projects/coin-slider/" target="_blank">Coin Slider</a>, <a href="http://VibeThemes.com" target="_blank">VibeThemes</a>
+* Credits: <a href="http://workshop.rs/projects/coin-slider/" target="_blank">Coin Slider</a>, <a href="http://VibeThemes.com" target="_blank">VibeThemes</a>
 
 == Installation ==
 
