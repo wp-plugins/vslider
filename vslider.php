@@ -849,7 +849,7 @@ function vslider_limitpost ($max_char, $more_link_text = '(more...)', $stripteas
 }
 
 // VSLIDER
-function vslider($option) { 
+function vslider($option='vslider_options') { 
     $options = get_option($option);
     if(!$option){ $option='vslider_options';$options = get_option($option); }
     vslider_head($option);
