@@ -445,10 +445,10 @@ if ($_GET['updated'] == 'true') {
 add_action('admin_menu', 'vslider_plugin_admin_menu');
 
 function vslider_plugin_admin_menu() {
-    add_menu_page('vSlider', 'vSlider', 'manage_options', 'vslider', 'vslider_main', WP_CONTENT_URL.'/plugins/vslider/images/icon.png');
-     add_submenu_page('vslider','Add vSlider', 'Edit vSlider', 'manage_options', 'add-vSlider', 'vslider_admin_page');
-    add_submenu_page('vslider','Tutorials', 'Tutorials & Faq', 'manage_options', 'vslider-tutorials', 'vslider_tutorials_page');
-    add_submenu_page('vslider','More Themes', 'Themes & Plugins', 'manage_options', 'vslider-themes', 'vslider_theme_page');
+    add_menu_page('Add vSlider ', 'vSlider', 'publish_posts', 'vslider', 'vslider_main', WP_CONTENT_URL.'/plugins/vslider/images/icon.png');
+     add_submenu_page('vslider','Edit vslider','Edit vSlider', 'publish_posts', 'add-vSlider', 'vslider_admin_page');
+    add_submenu_page('vslider','vSlider Tutorials ','Tutorials & Faq', 'publish_posts', 'vslider-tutorials', 'vslider_tutorials_page');
+    add_submenu_page('vslider','VibeThemes Themes and Plugins','Themes & Plugins', 'publish_posts', 'vslider-themes', 'vslider_theme_page');
     }
 //vSlider main page
 function vslider_main()
