@@ -1,4 +1,4 @@
-=== vSlider : Multiple Image Slider ===
+=== vSlider Multi Image Slider plugin ===
 Contributors: Mr. Vibe
 Donate link: http://vibethemes.com/plugins/
 Tags: mutiple image slider,banner, slider, sidebar, widget, plugin,vslider,wordpress image slider plugin
@@ -43,7 +43,7 @@ To insert this code in your template/theme pages. (if you have installed php-exe
 `<?php if (function_exists('vslider')) { vslider('abc'); }?>` (where `abc` is vslider name)
 
 * Do not Forget to check the vSlider Tutorials and Faq's in vSlider Admin panel inside the Plugin. vSlider Tutorials are updated on a regular basis, you can request for a custom tutorial <a href="http://www.vibethemes.com/forum/forum/vslider-support">here</a>
-*Credits: <a href="http://workshop.rs/projects/coin-slider/" target="_blank">Coin Slider</a>, <a href="http://VibeThemes.com" target="_blank">VibeThemes</a>
+* Credits: <a href="http://workshop.rs/projects/coin-slider/" target="_blank">Coin Slider</a>, <a href="http://VibeThemes.com" target="_blank">VibeThemes</a>
 
 == Installation ==
 
@@ -79,6 +79,9 @@ Check permissions for cache folder in vslider to 755
 For Demo <a href="http://www.vibethemes.com/introducing-vslider-4-0/">Click Here</a>
 
 == Changelog ==
+= 4.0.2 =
+1. Resolved Bug: missing argument 1 for vslider()
+
 = 4.0.1 =
 1. Resolved Bug: Conflicting styles at the same page.
 2. Resolved Bug: Creation of a Blank vSlider
