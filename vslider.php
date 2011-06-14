@@ -757,7 +757,6 @@ $options = get_option($option);
                 &nbsp;&nbsp;<?php _e("Grab Post Image:", 'vslider'); ?>
                 <select name="<?php echo $option; ?>[catchimage]">
                     <option value="true" <?php selected('true', $options['excerpt']); ?>>Featured</option>
-                    <option value="false" <?php selected('false', $options['excerpt']); ?>>First Image</option>
                 </select>
                 </p>
                 <p><?php _e("Slides", 'vslider'); ?>:
