@@ -77,7 +77,7 @@ Check permissions for cache folder in vslider to 755
 
 == Screenshots ==
 For Demo <a href="http://www.vibethemes.com/introducing-vslider-4-0/">Click Here</a>
-
+*<a href="http://www.vibethemes.com/vslider-4-0-now-available-for-download/" target="_blank">Multiple sliders on Single Page Demo</a>
 == Changelog ==
 = 4.0.2 =
 1. Resolved Bug: missing argument 1 for vslider()
