@@ -217,7 +217,8 @@ var $jq = jQuery.noConflict(); $jq(document).ready(function() {
                                                     echo "clear: both;margin-bottom:5px;";
                                                 }  ?>
                                                }             
-                              #<?php echo $option; ?>container   .cs-buttons a:hover, a.cs-active { background: url('<?php echo WP_CONTENT_URL;?>/plugins/vslider/images/nav_style1.png') no-repeat;background-position: right; }          
+                              #<?php echo $option; ?>container   .cs-buttons a:hover,
+ #<?php echo $option; ?>container a.cs-active { background: url('<?php echo WP_CONTENT_URL;?>/plugins/vslider/images/nav_style1.png') no-repeat;background-position: right; }          
             <?php break;
         }
         
@@ -250,7 +251,8 @@ var $jq = jQuery.noConflict(); $jq(document).ready(function() {
                                                     echo "clear: both;margin-bottom:5px;";
                                                 }  ?> 
                                                }             
-                               #<?php echo $option; ?>container  .cs-buttons a:hover, a.cs-active { background: url('<?php echo WP_CONTENT_URL;?>/plugins/vslider/images/nav_2_active.png') no-repeat; }          
+                               #<?php echo $option; ?>container  .cs-buttons a:hover,
+ #<?php echo $option; ?>container a.cs-active { background: url('<?php echo WP_CONTENT_URL;?>/plugins/vslider/images/nav_2_active.png') no-repeat; }          
             <?php break;
         }
         
@@ -263,7 +265,8 @@ var $jq = jQuery.noConflict(); $jq(document).ready(function() {
                                                     echo "clear: both;margin-bottom:5px;";
                                                 }  ?>
                                                }             
-                              #<?php echo $option; ?>container   .cs-buttons a:hover, a.cs-active { background: url('<?php echo WP_CONTENT_URL;?>/plugins/vslider/images/nav_style4.png') no-repeat;background-position: right; }          
+                              #<?php echo $option; ?>container   .cs-buttons a:hover,
+ #<?php echo $option; ?>container a.cs-active { background: url('<?php echo WP_CONTENT_URL;?>/plugins/vslider/images/nav_style4.png') no-repeat;background-position: right; }          
             <?php break;
         }
         case 'nav_style5':  { ?>
@@ -275,7 +278,8 @@ var $jq = jQuery.noConflict(); $jq(document).ready(function() {
                                                     echo "clear: both;margin-bottom:5px;";
                                                 }  ?>
                                                }             
-                               #<?php echo $option; ?>container .cs-buttons a:hover, a.cs-active { background: url('<?php echo WP_CONTENT_URL;?>/plugins/vslider/images/nav_style5.png') no-repeat;background-position: bottom; }          
+                               #<?php echo $option; ?>container .cs-buttons a:hover,
+ #<?php echo $option; ?>container a.cs-active { background: url('<?php echo WP_CONTENT_URL;?>/plugins/vslider/images/nav_style5.png') no-repeat;background-position: bottom; }          
             <?php break;
         }
         
