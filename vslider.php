@@ -4,7 +4,7 @@
     Plugin URI: http://www.Vibethemes.com/vslider-wordpress-image-slider-plugin/
     Description: Implementing a featured image gallery into your WordPress theme has never been easier! Showcase your portfolio, animate your header or manage your banners with vSlider. vslider by  <a href="http://www.vibethemes.com/" title="premium wordpress themes">VibeThemes</a>.
     Author: Mr.Vibe
-    Version: 4.0.2
+    Version: 4.0.3
     Author URI: http://www.Vibethemes.com/
 
 	vSlider is released under GPL:
@@ -472,21 +472,32 @@ function vslider_main()
 if($_GET['add'])
 {
     $option=$_POST['option_name'];
-    if($option){
-    $option = preg_replace('/[^a-z0-9\s]/i', '', $option);  
-    $option = str_replace(" ", "_", $option);
-    global $wpdb;
-	$table_name = $wpdb->prefix . "vslider"; 
-    $sql = "INSERT INTO " . $table_name . " values ('','".$option."','1');";
-    if($wpdb->query( $sql ) === false)
+    if(get_option($_POST['option_name']))
     {
-        $v_message= ' Unable to Add vSlider';
+     if($option){
+            $option = preg_replace('/[^a-z0-9\s]/i', '', $option);  
+            $option = str_replace(" ", "_", $option);
+            global $wpdb;
+            $table_name = $wpdb->prefix . "vslider"; 
+             $options = get_options($option);
+            if($options)
+            {
+                $v_message= 'Unable to Add vSlider, try a different name';
+            }else{
+                $sql = "INSERT INTO " . $table_name . " values ('','".$option."','1');";
+                if ($wpdb->query( $sql )){
+                        add_option($option, vslider_defaults());
+                        $v_message= ' vSlider successfully added';
+                        }
+                else{
+                        $v_message= 'Unable to Add vSlider, can not insert vSlider';
+                        }
+                };
+            }else{
+                    $v_message= ' Unable to Add vSlider';
+                }
     }else{
-        $v_message= ' vSlider successfully added';
-        add_option($option, vslider_defaults());
-    };
-    }else{
-        $v_message= ' Unable to Add vSlider';
+        $v_message= ' Unable to Add vSlider, try a different name';
     }
     ?>
 <div class="updated" id="message"><p><strong>
