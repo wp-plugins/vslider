@@ -608,7 +608,7 @@ if($_GET['activate'])
                 <th scope="col"  class="manage-column column-name" colspan="2"><small><?php _e('Stay Connected '); ?>:</small>&nbsp;
                 <a href="http://twitter.com/#!/vibethemes/" target="_blank"><img src="<?php echo WP_CONTENT_URL."/plugins/vslider/images/twitter.gif"; ?>" /></a>
                 &nbsp;<a href="http://www.facebook.com/vibethemes/" target="_blank"><img src="<?php echo WP_CONTENT_URL."/plugins/vslider/images/facebook.png"; ?>" /></a>
-                &nbsp;<a href="http://www.vibethemes.com/forums/" target="_blank" title="VibeThemes Forums"><img src="<?php echo WP_CONTENT_URL."/plugins/vslider/images/vibeforums.png"; ?>" /></a>
+                &nbsp;<a href="http://www.vibethemes.com/forum/" target="_blank" title="VibeThemes Forums"><img src="<?php echo WP_CONTENT_URL."/plugins/vslider/images/vibeforums.png"; ?>" /></a>
                 </th>
 			</tr>
 		</tfoot>
