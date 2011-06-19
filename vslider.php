@@ -4,7 +4,7 @@
     Plugin URI: http://www.Vibethemes.com/vslider-wordpress-image-slider-plugin/
     Description: Implementing a featured image gallery into your WordPress theme has never been easier! Showcase your portfolio, animate your header or manage your banners with vSlider. vslider by  <a href="http://www.vibethemes.com/" title="premium wordpress themes">VibeThemes</a>.
     Author: Mr.Vibe
-    Version: 4.0.2
+    Version: 4.0.3
     Author URI: http://www.Vibethemes.com/
 
 	vSlider is released under GPL:
