@@ -6,9 +6,9 @@ Requires at least: 2.7
 Tested up to: 3.1.3
 Stable tag: 4.0.2
 
-Unlimited image sliders,featured image galleries into your WordPress theme! Join the Vibe at VibeThemes.
+Now Host unlimited image sliders,featured image galleries into your WordPress theme! Join the Vibe at VibeThemes.
 == Description ==
-Showcase your portfolio, animate your header or manage your banners with vSlider 4.0. vSlider is a wordpress image slider plugin where you can host multiple image sliders and upto 20 slides per slider.<br/>
+Showcase your portfolio, animate your header or manage your banners with vSlider 4.0. vSlider is a wordpress image slider plugin where you can host multiple image sliders and upto 20 slides per slider.
 = More Features =
 <ul>
 <li>Get Images from Post or Page</li>
@@ -79,6 +79,9 @@ Check permissions for cache folder in vslider to 755
 For Demo <a href="http://www.vibethemes.com/introducing-vslider-4-0/">Click Here</a>
 *<a href="http://www.vibethemes.com/vslider-4-0-now-available-for-download/" target="_blank">Multiple sliders on Single Page Demo</a>
 == Changelog ==
+= 4.0.3 =
+1. Resolved Bug: h bug in vslider()
+
 = 4.0.2 =
 1. Resolved Bug: missing argument 1 for vslider()
 
