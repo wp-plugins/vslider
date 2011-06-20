@@ -472,17 +472,17 @@ function vslider_main()
 if($_GET['add'])
 {
     $option=$_POST['option_name'];
-    if(get_option($_POST['option_name']))
+    if(!get_option($_POST['option_name']))
     {
      if($option){
             $option = preg_replace('/[^a-z0-9\s]/i', '', $option);  
             $option = str_replace(" ", "_", $option);
             global $wpdb;
             $table_name = $wpdb->prefix . "vslider"; 
-             $options = get_options($option);
+             $options = get_option($option);
             if($options)
             {
-                $v_message= 'Unable to Add vSlider, try a different name';
+                $v_message= 'Unable to Add vSlider,  different name';
             }else{
                 $sql = "INSERT INTO " . $table_name . " values ('','".$option."','1');";
                 if ($wpdb->query( $sql )){
