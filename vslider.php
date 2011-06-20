@@ -472,7 +472,7 @@ function vslider_main()
 if($_GET['add'])
 {
     $option=$_POST['option_name'];
-    if(get_option($_POST['option_name']))
+    if(!get_option($_POST['option_name']))
     {
      if($option){
             $option = preg_replace('/[^a-z0-9\s]/i', '', $option);  
