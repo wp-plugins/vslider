@@ -479,7 +479,7 @@ if($_GET['add'])
             $option = str_replace(" ", "_", $option);
             global $wpdb;
             $table_name = $wpdb->prefix . "vslider"; 
-             $options = get_options($option);
+             $options = get_option($option);
             if($options)
             {
                 $v_message= 'Unable to Add vSlider, try a different name';
