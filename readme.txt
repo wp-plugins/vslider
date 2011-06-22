@@ -6,7 +6,7 @@ Requires at least: 2.7
 Tested up to: 3.1.3
 Stable tag: 4.1
 
-Host unlimited image sliders,featured image galleries into your WordPress theme! Join the Vibe with VibeThemes.
+Host unlimited image sliders,featured image galleries into your WordPress theme! Easily Integrate your Blog/Website with just few clicks. Join the Vibe with VibeThemes.
 == Description ==
 Showcase your portfolio, animate your header or manage your banners with vSlider 4.0+. vSlider is a wordpress image slider plugin where you can host multiple image sliders and upto 20 slides per slider.
 = More Features =
