@@ -1,14 +1,14 @@
-=== vSlider Multi Image Slider plugin ===
+=== vSlider Multi Image Slider for WordPress ===
 Contributors: Mr. Vibe
 Donate link: http://vibethemes.com/plugins/
 Tags: mutiple image slider,banner, slider, sidebar, widget, plugin,vslider,wordpress image slider plugin
 Requires at least: 2.7
 Tested up to: 3.1.3
-Stable tag: 4.0.3
+Stable tag: 4.1
 
-Now Host unlimited image sliders,featured image galleries into your WordPress theme! Join the Vibe at VibeThemes.
+Host unlimited image sliders,featured image galleries into your WordPress theme! Join the Vibe with VibeThemes.
 == Description ==
-Showcase your portfolio, animate your header or manage your banners with vSlider 4.0. vSlider is a wordpress image slider plugin where you can host multiple image sliders and upto 20 slides per slider.
+Showcase your portfolio, animate your header or manage your banners with vSlider 4.0+. vSlider is a wordpress image slider plugin where you can host multiple image sliders and upto 20 slides per slider.
 = More Features =
 <ul>
 <li>Get Images from Post or Page</li>
@@ -24,6 +24,7 @@ Showcase your portfolio, animate your header or manage your banners with vSlider
 <li>Navigation button placement</li>
 <li>`Short Code and inbuilt Widget`</li>
 <li>Custom border,color and radius</li>
+<li>[NEW] Grab First or Featured image from the Posts</li>
 </ul>  
 
 = Widget =
@@ -79,6 +80,13 @@ Check permissions for cache folder in vslider to 755
 For Demo <a href="http://www.vibethemes.com/introducing-vslider-4-0/">Click Here</a>
 *<a href="http://www.vibethemes.com/vslider-4-0-now-available-for-download/" target="_blank">Multiple sliders on Single Page Demo</a>
 == Changelog ==
+= 4.1 =
+1. [New Feature] Grab the first image from the post
+2. Resolved Fatal Error [get_options] bug
+3. Resolved issue Show description without Title
+4. Added Cross Fade image transition effect
+5. Resolved issue pre Fade delay
+
 = 4.0.3 =
 1. Resolved Bug: h bug in vslider()
 

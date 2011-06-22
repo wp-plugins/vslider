@@ -61,7 +61,11 @@
 			// create title bar
 			$('#'+el.id).append("<div class='cs-title' id='cs-title-"+el.id+"' style='position: absolute; bottom:0; left: 0; z-index: 1000;'></div>");
 						
-			$.setFields(el);
+			if(params[el.id].effect =='fade'){
+			 params[el.id].spw=1;
+             params[el.id].sph=1;
+			}
+            $.setFields(el);
 			
 			if(params[el.id].navigation)
 				$.setNavigation(el);
@@ -182,9 +186,6 @@
 		
 			clearInterval(interval[el.id]);	
 			delay = params[el.id].delay + params[el.id].spw*params[el.id].sph*params[el.id].sDelay;
-            if(params[el.id].effect =='fade')
-            { interval[el.id] = setInterval(function() { $.transition(el)  }, delay);
-                }else
 			interval[el.id] = setInterval(function() { $.transition(el)  }, delay);
 			
 		}
@@ -195,14 +196,8 @@
 			if(params[el.id].pause == true) return;
             $.effect(el); 
             squarePos[el.id] = 0;
-            if(params[el.id].effect =='fade')
-            {
-                $(el).css({ 'opacity' :  0 }).animate({ 'opacity' : 1 }, (2*params[el.id].delay/3));
-                $(el).css({ 'background-image': 'url('+images[el.id][imagePos[el.id]]+')' });//.animate({ 'opacity' : 0 }, (params[el.id].delay/3));
-            }else{
 			appInterval[el.id] = setInterval(function() { $.appereance(el,order[el.id][squarePos[el.id]])  },params[el.id].sDelay);
             $(el).css({ 'background-image': 'url('+images[el.id][imagePos[el.id]]+')' });
-            }
             
 			if(typeof(direction) == "undefined")
 				imagePos[el.id]++;
@@ -511,8 +506,14 @@
 		}
         
         $.fade = function(el){
-		
-		}
+		  counter = 0;
+			for(i=1;i <= params[el.id].sph;i++){
+				for(j=1; j <= params[el.id].spw; j++){	
+					order[el.id][counter] = i+''+j;
+					counter++;
+				                                  }
+		                                       }
+        }
         
         // horizontal effect
 		$.horizontal = function(el){

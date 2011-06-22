@@ -2,15 +2,15 @@
 /*
     Plugin Name: vSlider
     Plugin URI: http://www.Vibethemes.com/vslider-wordpress-image-slider-plugin/
-    Description: Implementing a featured image gallery into your WordPress theme has never been easier! Showcase your portfolio, animate your header or manage your banners with vSlider. vslider by  <a href="http://www.vibethemes.com/" title="premium wordpress themes">VibeThemes</a>.
+    Description: Implementing a featured image gallery into your WordPress theme has never been easier! Showcase your portfolio, animate your header or manage your banners with vSlider.Create unlimited image sliders, the best wordpress image slider plugin vSlider by  <a href="http://www.vibethemes.com/" title="premium wordpress themes">VibeThemes</a>.
     Author: Mr.Vibe
-    Version: 4.0.3
+    Version: 4.1
     Author URI: http://www.Vibethemes.com/
 
 	vSlider is released under GPL:
 	http://www.opensource.org/licenses/gpl-license.php
 */
-
+//=====:: This is Awesomenewss from MR.Vibe at VibeThemes.com ::=====//
 //  If not defined, define the path to wp-conder dir
 if (!defined('WP_CONTENT_URL')) {
 	define('WP_CONTENT_URL', get_option('siteurl').'/wp-content');
@@ -183,7 +183,7 @@ var $jq = jQuery.noConflict(); $jq(document).ready(function() {
     } 
      ?>
     #<?php echo $option; ?>container .cs-buttons {clear:both; font-size: 0px; margin: <?php echo $options['navplace']; ?>; float: left; }
-       #cs-button-<?php echo $option; ?>{ z-index:999;}
+       #cs-button-<?php echo $option; ?>{ z-index:999;outline:none;}
      <?php
      switch ($options['navstyle']){
         case 'nav_small':  { ?>
@@ -299,6 +299,9 @@ var $jq = jQuery.noConflict(); $jq(document).ready(function() {
             <?php
         }
      }
+     ?>
+     #<?php echo $option; ?>  .cs-prev,#<?php echo $option; ?>  .cs-next { outline:none; }
+     <?php
 switch($options['arrstyle']){
     case 'arr_style1':{ ?>
       #<?php echo $option; ?>  .cs-prev {margin-left:8px; line-height: 50px;width: 50px;height:50px; background: url('<?php echo WP_CONTENT_URL;?>/plugins/vslider/images/nav_style1_arrows-prev.png')no-repeat; text-indent: -999px;}
@@ -459,9 +462,9 @@ function vslider_main()
 {
     ?>
     <div class="wrap" style="width:820px;"><div id="icon-options-general" class="icon32"><br /></div>
-    <h2>vSlider 4.0 Settings</h2>
+    <h2>vSlider 4.1 Settings</h2>
     <div class="metabox-holder" style="width: 820px; float:left;">
-    <small>Welcome to vSlider 4.0</small>
+    <small>Welcome to vSlider 4.1</small>
      <div class="inside">
      <br />
      </div>
@@ -643,7 +646,7 @@ $option=$_GET['edit'];
     $option='vslider_options';
     }
 ?>
-<h2><?php _e("vSlider 4.0 Edit Options Page [ ".$option." ]"); ?></h2>
+<h2><?php _e("vSlider 4.1 Edit Options Page [ ".$option." ]"); ?></h2>
 
 
 <form method="post" action="options.php">
@@ -682,8 +685,9 @@ $options = get_option($option);
                 <p><?php _e("Text font size", 'vslider'); ?>:<input type="text" name="<?php echo $option; ?>[fontSize]" value="<?php echo $options['fontSize'] ?>" size="3" />px
                 &nbsp;&nbsp;<a href="#" class="tooltip"><span><img src='<?php echo WP_CONTENT_URL;?>/plugins/vslider/images/titletext.png' /> </span><img src='<?php echo WP_CONTENT_URL;?>/plugins/vslider/images/tooltip.png' /> </a></p>
                 <p><?php _e("Text color", 'vslider'); ?>:<input id="textColor" type="text" name="<?php echo $option; ?>[textColor]" value="<?php echo $options['textColor'] ?>" size="8" />&nbsp;HEX</p>
-                <p><?php _e("Background color", 'vslider'); ?>:<input id="bgColor" type="text" name="<?php echo $option; ?>[bgColor]" value="<?php echo $options['bgColor'] ?>" size="8" />&nbsp;HEX</p>
                 <small><?php _e("Click on the text box to pick a color", 'vslider'); ?></small>
+                <p><?php _e("Background color", 'vslider'); ?>:<input id="bgColor" type="text" name="<?php echo $option; ?>[bgColor]" value="<?php echo $options['bgColor'] ?>" size="8" />&nbsp;HEX</p>
+                <small><?php _e("To select color click on Tick at the right bottom of the color panel", 'vslider'); ?></small>
                 <p><input type="submit" class="button" value="<?php _e('Save Settings') ?>" /></p>
 
 			</div>
@@ -692,7 +696,7 @@ $options = get_option($option);
 
 	<div class="metabox-holder" style="width: 450px;float:right;margin-bottom:-10px;">
        <div class="postbox">        
-		<h3><?php _e("More vSlider Effects", 'vslider'); ?> <div class="click" id="moreeffects" style="float:right;cursor:pointer;"><?php _e("(+/-)", 'vslider'); ?></div></h3>
+		<h3><?php _e("More vSlider Settings", 'vslider'); ?> <div class="click" id="moreeffects" style="float:right;cursor:pointer;"><?php _e("(+/-)", 'vslider'); ?></div></h3>
 			<div class="inside" style="padding: 10px;display:none;" id="boxmoreeffects">         
              <p><?php _e("Image Button Style", 'vslider'); ?>:<select name="<?php echo $option; ?>[navstyle]" id="navstyle">
                 <option value="none" <?php selected('none', $options['navstyle']); ?>>None</option>
@@ -771,7 +775,8 @@ $options = get_option($option);
                 <?php wp_dropdown_categories(array('selected' => $options['imgCat'], 'name' => $option.'[imgCat]', 'orderby' => 'Name' , 'hierarchical' => 1, 'show_option_all' => __("All Categories", 'vslider'), 'hide_empty' => '0' )); ?>
                 &nbsp;&nbsp;<?php _e("Grab Post Image:", 'vslider'); ?>
                 <select name="<?php echo $option; ?>[catchimage]">
-                    <option value="true" <?php selected('true', $options['excerpt']); ?>>Featured</option>
+                    <option value="featured" <?php selected('featured', $options['catchimage']); ?>>Featured</option>
+                    <option value="first" <?php selected('first', $options['catchimage']); ?>>First</option>
                 </select>
                 </p>
                 <p><?php _e("Slides", 'vslider'); ?>:
@@ -872,24 +877,43 @@ function vslider($option='vslider_options'){
     <?php
   echo '<div id="'.$option.'">';
   if($options['customImg'] == 'false') {
-      $recent = new WP_Query("cat=".$options['imgCat']."&showposts=".$options['slideNr']); while($recent->have_posts()) : $recent->the_post(); ?>
+      $recent = new WP_Query("cat=".$options['imgCat']."&showposts=".$options['slideNr']); 
+      while($recent->have_posts()) : $recent->the_post(); ?>
           <a href="<?php the_permalink(); ?>" target="<?php echo $options['target']; ?>">
-          <?php
-     if($options['timthumb'])
-     {
-      // get the src of the post thumbnail
-      $src = wp_get_attachment_image_src( get_post_thumbnail_id($post->ID), array( 300,300 ), false, '' ); 
-      $thumbnailSrc = $src[0]; 
-      $img_url = WP_CONTENT_URL.'/plugins/vslider/timthumb.php?src='.$thumbnailSrc.'&amp;w='.$options['width'].'&amp;h='.$options['height'].'&amp;zc=1&amp;q='.$options['quality'];
+          <?php 
+          if($options['catchimage'] == 'featured'){ // CATCH THE FEATURED IMAGE OF THE POST
+             if($options['timthumb'])    // get the src of the post thumbnail
+            {    
+                $src = wp_get_attachment_image_src( get_post_thumbnail_id($post->ID), array( 300,300 ), false, '' ); 
+                $thumbnailSrc = $src[0]; 
+                $img_url = WP_CONTENT_URL.'/plugins/vslider/timthumb.php?src='.$thumbnailSrc.'&amp;w='.$options['width'].'&amp;h='.$options['height'].'&amp;zc=1&amp;q='.$options['quality'];
       
-?>
-      <img src="<?php echo $img_url; ?>" alt="" />
-          <?php } else {the_post_thumbnail ( array($options['width'], $options['height']) );} ?>
-          <?php if($options['excerpt'] == 'true') { ?>
+                ?>
+                <img src="<?php echo $img_url; ?>" alt="" />
+                <?php } else {
+                              the_post_thumbnail ( array($options['width'], $options['height']) );
+                              }
+            }else if($options['catchimage'] == 'first'){
+                  // CATCH THE FIRST IMAGE OF THE POST 
+                    $iPostID = get_the_ID();
+                    $content_post = get_post($iPostID);
+                    $content = $content_post->post_content;
+                    $output = preg_match_all('/<img.+src=[\'"]([^\'"]+)[\'"].*>/i',$content, $matches);
+                    $firstsrc = $matches [1] [0];
+                    if($options['timthumb'])    // get the src of the post thumbnail
+                    {  $image = str_replace(get_bloginfo('siteurl'), '', $firstsrc); 
+                       $img_url = WP_CONTENT_URL.'/plugins/vslider/timthumb.php?src='.urlencode($image).'&amp;w='.$options['width'].'&amp;h='.$options['height'].'&amp;zc=1&amp;q='.$options['quality'];
+                       }else {$img_url= $firstsrc;}
+                        ?>
+                        <img src="<?php echo $img_url; ?>" style="<?php echo "width:".$options['width'].";height:".$options['height'].";"; ?>" alt="" />
+                        <?php    
+                        
+            }    
+             if($options['excerpt'] == 'true') { ?>
               <span><h4><?php the_title(); ?></h4><?php vslider_limitpost($options['chars'], "" ); ?></span>
           <?php } ?>
           </a>
-      <?php endwhile;
+      <?php endwhile; //endwhile
   } else {
     $slides = $options['slideNr'] + 1;
     for($x=1; $x<$slides; $x++){ ?>
@@ -903,7 +927,7 @@ function vslider($option='vslider_options'){
        }
        ?>
        <img src="<?php echo $img_url; ?>" width="<?php echo $options['width']; ?>" height="<?php echo $options['height']; ?>" style="width:<?php echo $options['width']; ?>px;height:<?php echo $options['height']; ?>px;" alt="<?php echo $options['heading'.$x.'']; ?>" />
-         <?php if($options['heading'.$x.'']) { ?>
+         <?php if($options['heading'.$x.''] || $options['desc'.$x.'']) { ?>
            <span><h4><?php echo $options['heading'.$x.'']; ?></h4><?php echo $options['desc'.$x.'']; ?></span>
          <?php } ?>
        </a>
@@ -912,6 +936,7 @@ function vslider($option='vslider_options'){
   echo '</div></div>';
 
 }
+
 function vSlider_link() { ?>
 <noscript><a href="http://www.vibethemes.com/" target="_blank" title="wordpress themes">Vibe Themes</a></noscript>
 <?php }
