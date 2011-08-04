@@ -127,6 +127,7 @@ var $jq = jQuery.noConflict(); $jq(document).ready(function() {
 #<?php echo $option; ?>container {
     margin: <?php echo $options['holdermar']; ?>;
     float:<?php echo $options['holderfloat']; ?>;
+    outline: none !important;
     }
 #<?php echo $option; ?> { 
     width: <?php echo $options['width']; ?>px; 
