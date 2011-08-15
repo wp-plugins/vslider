@@ -237,8 +237,8 @@
 			}
 
 			$('#cs-'+el.id+sid).css({ opacity: 0, 'background-image': 'url('+images[el.id][imagePos[el.id]]+')' });
-			$('#cs-'+el.id+sid).animate({ opacity: 1 }, 300);
-			squarePos[el.id]++;
+			$('#cs-'+el.id+sid).animate({ opacity: 1 }, params[el.id].sDelay);
+            squarePos[el.id]++;
 			
 		};
 
@@ -303,10 +303,15 @@
 
         }
         
+        $.randomize = function(arr) {
+            for(var j, x, i = arr.length; i; j = parseInt(Math.random() * i), x = arr[--i], arr[i] = arr[j], arr[j] = x);
+            return arr;
+                };
 		// effects
-		$.effect = function(el){			
-			effA = ['random','swirl','fade','rain','vertical','altvertical','horizontal','althorizontal','diagonal'];
-			if(params[el.id].effect == '')
+		$.effect = function(el){
+		  effA = ['random','swirl','fade','rain','vertical','altvertical','horizontal','althorizontal','diagonal'];
+            
+            if(params[el.id].effect == '')
 				eff = effA[Math.floor(Math.random()*(effA.length))];
 			else
 				eff = params[el.id].effect;
@@ -507,8 +512,8 @@
         
         $.fade = function(el){
 		  counter = 0;
-			for(i=1;i <= params[el.id].sph;i++){
-				for(j=1; j <= params[el.id].spw; j++){	
+			for(i=1;i <= 1;i++){
+				for(j=1; j <= 1; j++){	
 					order[el.id][counter] = i+''+j;
 					counter++;
 				                                  }
@@ -576,7 +581,7 @@
 		titleSpeed: 500, // speed of title appereance in ms
 		effect: '', // random, swirl, rain, straight
 		navigation: true, // prev next and buttons
-		links : true, // show images as links 
+		links : true, // show images as links
 		hoverPause: true // pause on hover		
 	};	
 	

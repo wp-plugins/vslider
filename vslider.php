@@ -4,7 +4,7 @@
     Plugin URI: http://www.Vibethemes.com/vslider-wordpress-image-slider-plugin/
     Description: Implementing a featured image gallery into your WordPress theme has never been easier! Showcase your portfolio, animate your header or manage your banners with vSlider.Create unlimited image sliders, the best wordpress image slider plugin vSlider by  <a href="http://www.vibethemes.com/" title="premium wordpress themes">VibeThemes</a>.
     Author: Mr.Vibe
-    Version: 4.1
+    Version: 4.1.1
     Author URI: http://www.Vibethemes.com/
 
 	vSlider is released under GPL:
@@ -41,7 +41,7 @@ function get_vsliders()
        <form method="post" action="?page=vslider&add=1">
        <tr style="height:60px;"> <td style="width: 100px;text-align:center;padding: 20px;"><?php echo ($data->id+1); ?> </td>
        <td style="padding: 20px;" colspan="2"><input type="text" id="option_name" name="option_name" size="70" />
-       <font style="font-size:10px;">&nbsp;&nbsp;&nbsp;&nbsp;* Do not use spaces or special characters in the name.</font>
+       <font style="font-size:10px;">&nbsp;&nbsp;&nbsp;&nbsp;* Do not use spaces, numbers or special characters in the name.</font>
        </td>
        <td style="width: 100px;text-align:center;padding: 20px;" colspan="2"><input type="submit" class="button-primary" style="padding: 10px 30px 10px 30px;" value="Add new vSlider" />  </td>
        </tr>
@@ -67,6 +67,11 @@ if ( $_GET['page'] == 'vslider-themes' ) {
     add_action('admin_init', 'vslider_theme_scripts');
     add_action('admin_print_styles', 'vslider_theme_styles');
 }
+
+if($_POST['uninstallvslider']){
+    vslider_plugin_uninstall();
+    }
+
 //Scripts to be loaded in the vSlider admin Panel
 function vslider_admin_scripts() {
     wp_enqueue_script  ('media-upload');
@@ -127,7 +132,6 @@ var $jq = jQuery.noConflict(); $jq(document).ready(function() {
 #<?php echo $option; ?>container {
     margin: <?php echo $options['holdermar']; ?>;
     float:<?php echo $options['holderfloat']; ?>;
-    outline: none !important;
     }
 #<?php echo $option; ?> { 
     width: <?php echo $options['width']; ?>px; 
@@ -193,6 +197,7 @@ var $jq = jQuery.noConflict(); $jq(document).ready(function() {
                                               -webkit-border-radius: 5px;
                                               -moz-border-radius: 5px;
                                               border-radius: 5px;
+                                              outline: none !important;
                                             }
                               #<?php echo $option; ?>container .cs-buttons a { margin-left: 5px; height: 5px; width: 5px; float: left; 
                                                background: #<?php echo $options['bgColor']; ?>;
@@ -200,12 +205,13 @@ var $jq = jQuery.noConflict(); $jq(document).ready(function() {
                                                -webkit-border-radius: 5px;
                                                 -moz-border-radius: 5px;
                                                 border-radius: 5px;
+                                                outline: none !important;
                                                 <?php if($options['vnavenable'])
                                                 {
                                                     echo "clear: both;margin-bottom:5px;";
                                                 }  ?>
                                                 }              
-                             #<?php echo $option; ?>container   a.cs-active { background-color: #<?php echo $options['textColor']; ?>; }          
+                             #<?php echo $option; ?>container   a.cs-active { background-color: #<?php echo $options['textColor']; ?>; outline: none !important;}          
             <?php break;
         }
         case 'nav_style1':  { ?>
@@ -213,13 +219,14 @@ var $jq = jQuery.noConflict(); $jq(document).ready(function() {
                                                text-indent: -999px;
                                                background: url('<?php echo WP_CONTENT_URL;?>/plugins/vslider/images/nav_style1.png') no-repeat;
                                                background-position: left;
+                                               outline: none !important;
                                                <?php if($options['vnavenable'])
                                                 {
                                                     echo "clear: both;margin-bottom:5px;";
                                                 }  ?>
                                                }             
                               #<?php echo $option; ?>container   .cs-buttons a:hover,
- #<?php echo $option; ?>container a.cs-active { background: url('<?php echo WP_CONTENT_URL;?>/plugins/vslider/images/nav_style1.png') no-repeat;background-position: right; }          
+ #<?php echo $option; ?>container a.cs-active { background: url('<?php echo WP_CONTENT_URL;?>/plugins/vslider/images/nav_style1.png') no-repeat;background-position: right; outline: none !important;}          
             <?php break;
         }
         
@@ -228,6 +235,7 @@ var $jq = jQuery.noConflict(); $jq(document).ready(function() {
                                                text-indent: -999px; background: #dfdfdf;
                                                border: 5px solid #c6c6c6; 
                                                text-indent: -1000px; 
+                                               outline: none !important;
                                                opacity:0.7;filter:alpha(opacity=70);
                                                 -webkit-border-radius: 15px;
                                                 -moz-border-radius: 15px;
@@ -238,8 +246,8 @@ var $jq = jQuery.noConflict(); $jq(document).ready(function() {
                                                 }  ?>
                                                }             
                                  
-                              #<?php echo $option; ?>container   .cs-buttons a:hover  { background: #efefef; border-color: #444;}
-                              #<?php echo $option; ?>container   a.cs-active { background: #efefef; border-color: #444;}          
+                              #<?php echo $option; ?>container   .cs-buttons a:hover  { background: #efefef; border-color: #444;outline: none !important;}
+                              #<?php echo $option; ?>container   a.cs-active { background: #efefef; border-color: #444; outline: none !important;}          
             <?php break;
         }
         
@@ -247,13 +255,14 @@ var $jq = jQuery.noConflict(); $jq(document).ready(function() {
                               #<?php echo $option; ?>container .cs-buttons a { margin-left: 5px; height: 33px; width: 33px; float: left; 
                                                text-indent: -999px;
                                                background: url('<?php echo WP_CONTENT_URL;?>/plugins/vslider/images/nav_2.png') no-repeat;
+                                               outline: none !important;
                                               <?php if($options['vnavenable'])
                                                 {
                                                     echo "clear: both;margin-bottom:5px;";
                                                 }  ?> 
                                                }             
                                #<?php echo $option; ?>container  .cs-buttons a:hover,
- #<?php echo $option; ?>container a.cs-active { background: url('<?php echo WP_CONTENT_URL;?>/plugins/vslider/images/nav_2_active.png') no-repeat; }          
+ #<?php echo $option; ?>container a.cs-active { background: url('<?php echo WP_CONTENT_URL;?>/plugins/vslider/images/nav_2_active.png') no-repeat; outline: none !important;}          
             <?php break;
         }
         
@@ -261,40 +270,43 @@ var $jq = jQuery.noConflict(); $jq(document).ready(function() {
                              #<?php echo $option; ?>container  .cs-buttons a { margin-left: 5px; height: 12px; width: 12px; float: left; 
                                                background: url('<?php echo WP_CONTENT_URL;?>/plugins/vslider/images/nav_style4.png') no-repeat;
                                                background-position: left;
+                                               outline: none !important;
                                               <?php if($options['vnavenable'])
                                                 {
                                                     echo "clear: both;margin-bottom:5px;";
                                                 }  ?>
                                                }             
                               #<?php echo $option; ?>container   .cs-buttons a:hover,
- #<?php echo $option; ?>container a.cs-active { background: url('<?php echo WP_CONTENT_URL;?>/plugins/vslider/images/nav_style4.png') no-repeat;background-position: right; }          
+ #<?php echo $option; ?>container a.cs-active { background: url('<?php echo WP_CONTENT_URL;?>/plugins/vslider/images/nav_style4.png') no-repeat;background-position: right; outline: none !important;}          
             <?php break;
         }
         case 'nav_style5':  { ?>
                               #<?php echo $option; ?>container .cs-buttons a { margin-left: 5px; height: 14px; width: 14px; float: left; 
                                                background: url('<?php echo WP_CONTENT_URL;?>/plugins/vslider/images/nav_style5.png') no-repeat;
                                                background-position: top;
+                                               outline: none !important;
                                               <?php if($options['vnavenable'])
                                                 {
                                                     echo "clear: both;margin-bottom:5px;";
                                                 }  ?>
                                                }             
                                #<?php echo $option; ?>container .cs-buttons a:hover,
- #<?php echo $option; ?>container a.cs-active { background: url('<?php echo WP_CONTENT_URL;?>/plugins/vslider/images/nav_style5.png') no-repeat;background-position: bottom; }          
+ #<?php echo $option; ?>container a.cs-active { background: url('<?php echo WP_CONTENT_URL;?>/plugins/vslider/images/nav_style5.png') no-repeat;background-position: bottom; outline: none !important;}          
             <?php break;
         }
         
         default: { ?>
-           #<?php echo $option; ?>container .cs-buttons { font-size: 0px; padding: 10px; float: left; }
+           #<?php echo $option; ?>container .cs-buttons { font-size: 0px; padding: 10px; float: left; outline: none !important;}
            #<?php echo $option; ?>container .cs-buttons a { margin-left: 5px; height: 15px; width: 15px; float: left; 
                             background: url('<?php echo WP_CONTENT_URL;?>/plugins/vslider/images/default_style.png') no-repeat;background-position:top;
                                                 text-indent: -1000px;
+                                                outline: none !important;
                             <?php if($options['vnavenable'])
                                                 {
                                                     echo "clear: both;margin-bottom:5px;";
                                                 }  ?> }
-             #<?php echo $option; ?>container .cs-buttons a:hover  { background: url('<?php echo WP_CONTENT_URL;?>/plugins/vslider/images/default_style.png') no-repeat;background-position: bottom;top:15px;}
-            #<?php echo $option; ?>container  a.cs-active { background: url('<?php echo WP_CONTENT_URL;?>/plugins/vslider/images/default_style.png') no-repeat;background-position:bottom;}          
+             #<?php echo $option; ?>container .cs-buttons a:hover  { background: url('<?php echo WP_CONTENT_URL;?>/plugins/vslider/images/default_style.png') no-repeat;background-position: bottom;top:15px;outline: none !important;}
+            #<?php echo $option; ?>container  a.cs-active { background: url('<?php echo WP_CONTENT_URL;?>/plugins/vslider/images/default_style.png') no-repeat;background-position:bottom;outline: none !important;}          
                                 
         
             <?php
@@ -386,7 +398,8 @@ function vslider_defaults() {
         'holderfloat' => 'none',
         'timthumb' => 1,
         'quality' => '80',
-        'vnavenable' => 0
+        'vnavenable' => 0,
+        'randimg' => 0
     );
 return $default;
 }
@@ -399,7 +412,7 @@ function vslider_plugin_install() {
     vslider_install();
     global $wpdb;
 	$table_name = $wpdb->prefix . "vslider"; 
-    $sql = "INSERT INTO " . $table_name . " values ('','vslider_options','1');";
+    $sql = "INSERT IGNORE INTO " . $table_name . " values ('','vslider_options','1');";
     $wpdb->query( $sql );
 }
 
@@ -408,7 +421,7 @@ function vslider_install(){
     global $wpdb;
 	$table_name = $wpdb->prefix . "vslider"; 
     
-		$sql = "CREATE TABLE " . $table_name . " (
+		$sql = "CREATE TABLE IF NOT EXISTS " . $table_name . " (
 		  id mediumint(9) NOT NULL AUTO_INCREMENT,
 		  option_name VARCHAR(255) NOT NULL DEFAULT  'vslider_options',
 		  active tinyint(1) NOT NULL DEFAULT  '0',
@@ -423,8 +436,62 @@ function vslider_install(){
 }
 
 // Runs on plugin deactivation and deletes the database field
-register_deactivation_hook( __FILE__, 'vslider_plugin_remove' );
-function vslider_plugin_remove() {
+//register_deactivation_hook( __FILE__, 'vslider_plugin_remove' );
+
+function vslider_uninstall(){
+  if($_POST['uninstallvslider']){
+echo '<div class="wrap"><div id="message" class="updated fade">';
+    echo '<p><h2> vSlider Successfully Uninstalled </h2></p></div>';
+	echo '<h2>'.__('vSlider Uninstall', 'vslider').'</h2>';
+	echo '<p><p><h3> vSlider Successfully Uninstalled </h3></p><strong>'.sprintf(__('Deactivate the vSlider from Plugins panel to Finish the Uninstallation.', 'vslider'), $deactivate_url).'</strong></p>';
+	echo '</div>';    }else { ?>
+<form method="post" action="">
+<div class="wrap">
+	<h2><?php _e('Uninstall vSlider', 'vslider'); ?></h2>
+	<p>
+		<?php _e('Deactivating vSlider plugin does not remove any data that may have been created, such as the slider data and the image links. To completely remove this plugin, you can uninstall it here.', 'vslider'); ?>
+	</p>
+	<p style="color: red">
+		<strong><?php _e('WARNING:', 'vslider'); ?></strong><br />
+		<?php _e('Once uninstalled, this cannot be undone. You should use a Database Backup plugin of WordPress to back up all the data first.', 'vslider'); ?>
+	</p>
+	<p style="color: red">
+		<strong><?php _e('The following WordPress Options/Tables will be DELETED:', 'vslider'); ?></strong><br />
+	</p>
+	<table class="widefat" style="width: 200px;">
+		<thead>
+			<tr>
+            <?php
+					global $wpdb;
+	                $table_name = $wpdb->prefix . "vslider"; ?>
+				<th><?php _e('Table: '.$table_name, 'vslider'); ?></th>
+			</tr>
+		</thead>
+		<tr>
+			<td valign="top" class="alternate">
+				<ol>
+				<?php
+                     $vslider_data = $wpdb->get_results("SELECT option_name FROM $table_name ORDER BY id");
+                      foreach ($vslider_data as $data) {
+                      echo '<li>'.$data->option_name.'</li>';
+                      }
+				?>
+				</ol>
+			</td>
+		</tr>
+	</table>
+	<p style="text-align: center;">
+		<?php _e('Do you really want to uninstall vSlider?', 'vslider'); ?><br /><br />
+		<input type="checkbox" name="uninstall_vslider" value="yes" />&nbsp;<?php _e('Yes', 'vslider'); ?><br /><br />
+		<input type="submit" name="uninstallvslider" value="<?php _e('UNINSTALL vSlider', 'vslider'); ?>" class="button-primary" onclick="return confirm('<?php _e('You Are About To Uninstall vSlider From WordPress.\nThis Action Is Not Reversible.\n\n Choose [Cancel] To Stop, [OK] To Uninstall.', 'vslider'); ?>')" />
+	</p>
+</div>
+</form>
+  <?php    
+  }
+}
+
+function vslider_plugin_uninstall() {
     global $wpdb;
 	$table_name = $wpdb->prefix . "vslider"; 
     $vslider_data = $wpdb->get_results("SELECT option_name FROM $table_name ORDER BY id");
@@ -454,7 +521,8 @@ add_action('admin_menu', 'vslider_plugin_admin_menu');
 
 function vslider_plugin_admin_menu() {
     add_menu_page('Add vSlider ', 'vSlider', 'publish_posts', 'vslider', 'vslider_main', WP_CONTENT_URL.'/plugins/vslider/images/icon.png');
-     add_submenu_page('vslider','Edit vslider','Edit vSlider', 'publish_posts', 'add-vSlider', 'vslider_admin_page');
+      add_submenu_page('vslider','Edit vslider','Edit vSlider', 'publish_posts', 'add-vSlider', 'vslider_admin_page');
+     add_submenu_page('vslider','Uninstall vslider','Uninstall vSlider', 'publish_posts', 'uninstall-vSlider', 'vslider_uninstall');
     add_submenu_page('vslider','vSlider Tutorials ','Tutorials & Faq', 'publish_posts', 'vslider-tutorials', 'vslider_tutorials_page');
     add_submenu_page('vslider','VibeThemes Themes and Plugins','Themes & Plugins', 'publish_posts', 'vslider-themes', 'vslider_theme_page');
     }
@@ -463,9 +531,9 @@ function vslider_main()
 {
     ?>
     <div class="wrap" style="width:820px;"><div id="icon-options-general" class="icon32"><br /></div>
-    <h2>vSlider 4.1 Settings</h2>
+    <h2>vSlider 4.1.1 Settings</h2>
     <div class="metabox-holder" style="width: 820px; float:left;">
-    <small>Welcome to vSlider 4.1</small>
+    <small>Welcome to vSlider 4.1.1</small>
      <div class="inside">
      <br />
      </div>
@@ -647,7 +715,7 @@ $option=$_GET['edit'];
     $option='vslider_options';
     }
 ?>
-<h2><?php _e("vSlider 4.1 Edit Options Page [ ".$option." ]"); ?></h2>
+<h2><?php _e("vSlider 4.1.1 Edit Options Page [ ".$option." ]"); ?></h2>
 
 
 <form method="post" action="options.php">
@@ -794,7 +862,7 @@ $options = get_option($option);
                 <?php _e("chars", 'vslider'); ?>:
                 <input type="text" name="<?php echo $option; ?>[chars]" value="<?php echo $options['chars'] ?>" size="3" />
                 </p>
-
+                <p><small><?php _e("Random Image Sequence:", 'vslider'); ?></small>&nbsp;<input type="checkbox" name="<?php echo $option; ?>[randimg]" value="_blank" <?php if($options['randimg'] === '_blank'){ echo 'CHECKED';}; ?> /></p>
                 <p><input type="submit" class="button" value="<?php _e('Save Settings') ?>" /></p>
 
 			</div>
@@ -872,13 +940,19 @@ function vslider_limitpost ($max_char, $more_link_text = '(more...)', $stripteas
 function vslider($option='vslider_options'){ 
     $options = get_option($option);
     if(!$option){ $option='vslider_options';$options = get_option($option); }
-    vslider_head($option);
+    global $wpdb;$num=1;
+	$table_name = $wpdb->prefix . "vslider"; 
+    $vslider_data = $wpdb->get_results("SELECT active FROM $table_name WHERE option_name='".$option."'");
+    foreach ($vslider_data as $data) { 
+        if($data->active == 1)
+        {  vslider_head($option);
     ?>
     <div id="<?php echo $option.'container'; ?>">
     <?php
   echo '<div id="'.$option.'">';
   if($options['customImg'] == 'false') {
-      $recent = new WP_Query("cat=".$options['imgCat']."&showposts=".$options['slideNr']); 
+      if($options['randimg']){$randimg="orderby=rand&";}//Randomise Images
+      $recent = new WP_Query($randimg."cat=".$options['imgCat']."&showposts=".$options['slideNr']); 
       while($recent->have_posts()) : $recent->the_post(); ?>
           <a href="<?php the_permalink(); ?>" target="<?php echo $options['target']; ?>">
           <?php 
@@ -906,9 +980,9 @@ function vslider($option='vslider_options'){
                        $img_url = WP_CONTENT_URL.'/plugins/vslider/timthumb.php?src='.urlencode($image).'&amp;w='.$options['width'].'&amp;h='.$options['height'].'&amp;zc=1&amp;q='.$options['quality'];
                        }else {$img_url= $firstsrc;}
                         ?>
-                        <img src="<?php echo $img_url; ?>" style="<?php echo "width:".$options['width'].";height:".$options['height'].";"; ?>" alt="" />
-                        <?php    
-                        
+                        <div style="background: url(<?php echo $img_url; ?>) no-repeat;<?php echo "width:".$options['width'].";height:".$options['height'].";"; ?>" alt="">
+                        </div>
+                        <?php                          
             }    
              if($options['excerpt'] == 'true') { ?>
               <span><h4><?php the_title(); ?></h4><?php vslider_limitpost($options['chars'], "" ); ?></span>
@@ -916,18 +990,23 @@ function vslider($option='vslider_options'){
           </a>
       <?php endwhile; //endwhile
   } else {
-    $slides = $options['slideNr'] + 1;
-    for($x=1; $x<$slides; $x++){ ?>
-       <a href="<?php echo $options['link'.$x.'']; ?>" target="<?php echo $options['target']; ?>">
+    //$slides = $options['slideNr'] + 1;
+    $randx = range(1, $options['slideNr']);
+    if($options['randimg']){        //RANDOMISING IMAGES
+           shuffle($randx);
+    }//Randomise Images
+    
+    foreach( $randx as $x){ ?>
+       <a href="<?php echo $options['link'.$x.'']; ?>" style="background:#fff;" target="<?php echo $options['target']; ?>">
        <?php 
        if($options['timthumb']){
        $image = str_replace(get_bloginfo('siteurl'), '', $options['slide'.$x.'']); 
-       $img_url = WP_CONTENT_URL.'/plugins/vslider/timthumb.php?src='.urlencode($image).'&amp;w='.$options['width'].'&amp;h='.$options['height'].'&amp;zc=1&amp;q='.$options['quality'];
+       $img_url =WP_CONTENT_URL.'/plugins/vslider/timthumb.php?src='.urlencode($image).'&amp;w='.$options['width'].'&amp;h='.$options['height'].'&amp;zc=1&amp;q='.$options['quality'];
        }else{
         $img_url=$options['slide'.$x.''];
        }
        ?>
-       <img src="<?php echo $img_url; ?>" width="<?php echo $options['width']; ?>" height="<?php echo $options['height']; ?>" style="width:<?php echo $options['width']; ?>px;height:<?php echo $options['height']; ?>px;" alt="<?php echo $options['heading'.$x.'']; ?>" />
+       <img src="<?php echo $img_url; ?>" style="width:<?php echo $options['width']; ?>px;height:<?php echo $options['height']; ?>px;" alt="<?php echo $options['heading'.$x.'']; ?>" />
          <?php if($options['heading'.$x.''] || $options['desc'.$x.'']) { ?>
            <span><h4><?php echo $options['heading'.$x.'']; ?></h4><?php echo $options['desc'.$x.'']; ?></span>
          <?php } ?>
@@ -935,8 +1014,9 @@ function vslider($option='vslider_options'){
     <?php }
   }
   echo '</div></div>';
-
-}
+   }//ENDIF
+  }//END-FOR
+}//END FUNCTION VSLIDER
 
 function vSlider_link() { ?>
 <noscript><a href="http://www.vibethemes.com/" target="_blank" title="wordpress themes">Vibe Themes</a></noscript>
