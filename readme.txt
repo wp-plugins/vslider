@@ -4,14 +4,14 @@ Donate link: http://vibethemes.com/plugins/
 Tags: mutiple image slider,banner, slider, sidebar, widget, plugin,vslider,wordpress image slider plugin
 Requires at least: 2.7
 Tested up to: 3.1.3
-Stable tag: 4.1
+Stable tag: 4.1.1
 
 Now Host unlimited image sliders,featured image galleries into your WordPress theme! VibeThemes Join the Vibe at VibeThemes.
 == Description ==
 Showcase your portfolio, animate your header or manage your banners with vSlider 4.0+. vSlider is a wordpress image slider plugin where you can host multiple image sliders and upto 20 slides per slider.
 = More Features =
 <ul>
-<li>Get Images from Post or Page</li>
+<li>Get First or Featured Images from Post or Page</li>
 <li>Load images faster with `Image caching`</li>
 <li>Custom slider Width and Height</li>
 <li>Give Title and Text to each slide</li>
@@ -24,7 +24,7 @@ Showcase your portfolio, animate your header or manage your banners with vSlider
 <li>Navigation button placement</li>
 <li>`Short Code and inbuilt Widget`</li>
 <li>Custom border,color and radius</li>
-<li>[NEW] Grab First or Featured image from the Posts</li>
+<li>[NEW] Randmise Image Sequence</li>
 </ul>  
 
 = Widget =
@@ -69,7 +69,7 @@ Method 2
 
 == Frequently Asked Questions ==
 * No images shown in vSlider
-Check permissions for cache folder in vslider to 755
+Check permissions for cache folder in vslider to 757
 *  
 * Use Tutorials and Faq's in the vSlider Admin menu
 * Free vSlider Support
@@ -77,9 +77,15 @@ Check permissions for cache folder in vslider to 755
  
 
 == Screenshots ==
-For Demo <a href="http://www.vibethemes.com/introducing-vslider-4-0/">Click Here</a>
+For Demo <a href="http://www.vibethemes.com/">Click Here</a>
 *<a href="http://www.vibethemes.com/vslider-4-0-now-available-for-download/" target="_blank">Multiple sliders on Single Page Demo</a>
 == Changelog ==
+= 4.1.1 =
+1. Updated Timthumb 
+2. [New Feature] Randomize image sequence
+3. Resolved fade delay issue
+4. Resolved deletion of sliders on deactivation via saperate uninstallation
+5. Resolved image dot below image buttons
 = 4.1 =
 1. [New Feature] Grab the first image from the post
 2. Resolved Fatal Error [get_options] bug
