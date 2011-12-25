@@ -1,10 +1,10 @@
 === vSlider Multi Image Slider for WordPress ===
 Contributors: Mr. Vibe
-Donate link: http://vibethemes.com/plugins/
+Donate link: http://vibethemes.com/showcase/
 Tags: mutiple image slider,banner, slider, sidebar, widget, plugin,vslider,wordpress image slider plugin
 Requires at least: 2.7
-Tested up to: 3.1.3
-Stable tag: 4.1.1
+Tested up to: 3.3
+Stable tag: 4.1.2
 
 Now Host unlimited image sliders,featured image galleries into your WordPress theme! VibeThemes Join the Vibe at VibeThemes.
 == Description ==
@@ -24,9 +24,10 @@ Showcase your portfolio, animate your header or manage your banners with vSlider
 <li>Navigation button placement</li>
 <li>`Short Code and inbuilt Widget`</li>
 <li>Custom border,color and radius</li>
-<li>[NEW] Randmise Image Sequence</li>
+<li>[NEW] Randmize Image Sequence</li>
 </ul>  
-
+= More Plugins =
+<a href="http://www.vibethemes.com/showcase" target="_blank">More WordPress Plugins by Me.</a>
 = Widget =
 
 In the Appearance -> Widgets you'll find the `vSlider - jQuery Image Slider` widget. After adding it to your sidebar you can enter an optional `Title` and select a `vSlider name`
@@ -77,9 +78,15 @@ Check permissions for cache folder in vslider to 757
  
 
 == Screenshots ==
-For Demo <a href="http://www.vibethemes.com/">Click Here</a>
+For Demo <a href="http://www.vibethemes.com/vslider-wordpress-plugin/">Click Here</a>
+vSlider Developer Version <a href="http://www.vibethemes.com/vsliderdev-for-developers/">Click Here</a>
+
 *<a href="http://www.vibethemes.com/vslider-4-0-now-available-for-download/" target="_blank">Multiple sliders on Single Page Demo</a>
 == Changelog ==
+= 4.1.2 =
+1. Updated Timthumb
+2. Resolved fade issue
+3. Resolved vSlider issue in MU
 = 4.1.1 =
 1. Updated Timthumb 
 2. [New Feature] Randomize image sequence

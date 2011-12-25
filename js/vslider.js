@@ -512,8 +512,8 @@
         
         $.fade = function(el){
 		  counter = 0;
-			for(i=1;i <= 1;i++){
-				for(j=1; j <= 1; j++){	
+			for(i=1;i <= params[el.id].sph;i++){
+				for(j=1; j <=params[el.id].spw; j++){	
 					order[el.id][counter] = i+''+j;
 					counter++;
 				                                  }

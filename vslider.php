@@ -4,7 +4,7 @@
     Plugin URI: http://www.Vibethemes.com/vslider-wordpress-image-slider-plugin/
     Description: Implementing a featured image gallery into your WordPress theme has never been easier! Showcase your portfolio, animate your header or manage your banners with vSlider.Create unlimited image sliders, the best wordpress image slider plugin vSlider by  <a href="http://www.vibethemes.com/" title="premium wordpress themes">VibeThemes</a>.
     Author: Mr.Vibe
-    Version: 4.1.1
+    Version: 4.1.2
     Author URI: http://www.Vibethemes.com/
 
 	vSlider is released under GPL:
@@ -12,9 +12,11 @@
 */
 //=====:: This is Awesomenewss from MR.Vibe at VibeThemes.com ::=====//
 //  If not defined, define the path to wp-conder dir
-if (!defined('WP_CONTENT_URL')) {
-	define('WP_CONTENT_URL', get_option('siteurl').'/wp-content');
+
+if (!defined('WP_PLUGIN_URL')) {
+	define('WP_PLUGIN_URL', plugins_url());
 }
+
 
 function get_vsliders()
 {
@@ -76,39 +78,39 @@ if($_POST['uninstallvslider']){
 function vslider_admin_scripts() {
     wp_enqueue_script  ('media-upload');
     wp_enqueue_script  ('thickbox');
-    wp_register_script ('vslider-upload', WP_CONTENT_URL.'/plugins/vslider/js/upload.js', array('jquery','media-upload', 'thickbox'));
+    wp_register_script ('vslider-upload', WP_PLUGIN_URL.'/vslider/js/upload.js', array('jquery','media-upload', 'thickbox'));
     wp_enqueue_script  ('vslider-upload');
-    wp_register_script ( 'colorpicker-js', WP_CONTENT_URL.'/plugins/vslider/picker/colorpicker.js', array('jquery'));
+    wp_register_script ( 'colorpicker-js', WP_PLUGIN_URL.'/vslider/picker/colorpicker.js', array('jquery'));
     wp_enqueue_script  ('colorpicker-js' );
-    wp_register_script ( 'custom-js', WP_CONTENT_URL.'/plugins/vslider/js/custom.js', array('jquery'));
+    wp_register_script ( 'custom-js', WP_PLUGIN_URL.'/vslider/js/custom.js', array('jquery'));
     wp_enqueue_script  ('custom-js' );
    }
 function vslider_a_scripts() {
-    wp_register_script ( 'a-js', WP_CONTENT_URL.'/plugins/vslider/js/main.js', array('jquery'));
+    wp_register_script ( 'a-js', WP_PLUGIN_URL.'/vslider/js/main.js', array('jquery'));
     wp_enqueue_script  ('a-js' );
 }
 function vslider_tutorial_scripts() {
-    wp_register_script ( 'tutorials-js', WP_CONTENT_URL.'/plugins/vslider/js/tutorials.js', array('jquery'));
+    wp_register_script ( 'tutorials-js', WP_PLUGIN_URL.'/vslider/js/tutorials.js', array('jquery'));
     wp_enqueue_script  ('tutorials-js' );
 }    
 function vslider_theme_scripts() {
-    wp_register_script ( 'themes-js', WP_CONTENT_URL.'/plugins/vslider/js/themes.js', array('jquery'));
+    wp_register_script ( 'themes-js', WP_PLUGIN_URL.'/vslider/js/themes.js', array('jquery'));
     wp_enqueue_script  ('themes-js' );
 } 
 //Styles to be loaded in the vSlider admin Panel
 function vslider_admin_styles() {
     wp_enqueue_style('thickbox');
-    wp_register_style('colorpicker-css', WP_CONTENT_URL.'/plugins/vslider/picker/colorpicker.css');
+    wp_register_style('colorpicker-css', WP_PLUGIN_URL.'/vslider/picker/colorpicker.css');
     wp_enqueue_style( 'colorpicker-css');
-    wp_register_style('tooltip-css', WP_CONTENT_URL.'/plugins/vslider/css/tooltip.css');
+    wp_register_style('tooltip-css', WP_PLUGIN_URL.'/vslider/css/tooltip.css');
     wp_enqueue_style( 'tooltip-css');
 }
 function vslider_tutorial_styles() {
-    wp_register_style('tutorials-css', WP_CONTENT_URL.'/plugins/vslider/css/tutorials.css');
+    wp_register_style('tutorials-css', WP_PLUGIN_URL.'/vslider/css/tutorials.css');
     wp_enqueue_style( 'tutorials-css');
     }
 function vslider_theme_styles() {
-    wp_register_style('themes-css', WP_CONTENT_URL.'/plugins/vslider/css/themes.css');
+    wp_register_style('themes-css', WP_PLUGIN_URL.'/vslider/css/themes.css');
     wp_enqueue_style( 'themes-css');
     }
 
@@ -117,7 +119,7 @@ add_action('wp_print_scripts', 'vslider_head_scripts');
 // ADD VSLIDER JS TO THEME HEAD SECTION
 function vslider_head_scripts() {
     wp_enqueue_script ('jquery'); 
-	wp_enqueue_script('vslider', WP_CONTENT_URL.'/plugins/vslider/js/vslider.js', $deps = array('jquery'));
+	wp_enqueue_script('vslider', WP_PLUGIN_URL.'/vslider/js/vslider.js', $deps = array('jquery'));
 }
 
 // ADD VSLIDER HEAD STYLES
@@ -128,6 +130,7 @@ function vslider_head($option) {
 var $jq = jQuery.noConflict(); $jq(document).ready(function() { 
     $jq('#<?php echo $option; ?>').coinslider({ width: <?php echo $options['width']; ?>,     height: <?php echo $options['height']; ?>, spw: <?php echo $options['spw']; ?>, sph: <?php echo $options['sph']; ?>, delay: <?php echo $options['delay']; ?>, sDelay: <?php echo $options['sDelay']; ?>, opacity: <?php echo $options['opacity']; ?>, titleSpeed: <?php echo $options['titleSpeed']; ?>, effect: '<?php echo $options["effect"]; ?>', navigation: <?php echo $options['navigation']; ?>, links : <?php echo $options['links']; ?>, stickynav: <?php echo $options['stickynav']; ?>, hoverPause: <?php echo $options['hoverPause']; ?> }); }); 
     </script>
+<!-- Begin vSlider options -->
 <style type="text/css" media="screen">
 #<?php echo $option; ?>container {
     margin: <?php echo $options['holdermar']; ?>;
@@ -383,9 +386,9 @@ function vslider_defaults() {
         'catchimage' => 'true',
     	'chars' => 200,
     	'excerpt' => 'true',
-    	'slide1' => WP_CONTENT_URL.'/plugins/vslider/images/slide1.jpg',
-    	'slide2' => WP_CONTENT_URL.'/plugins/vslider/images/slide2.jpg',
-    	'slide3' => WP_CONTENT_URL.'/plugins/vslider/images/slide3.jpg',
+    	'slide1' => WP_PLUGIN_URL.'/vslider/images/slide1.jpg',
+    	'slide2' => WP_PLUGIN_URL.'/vslider/images/slide2.jpg',
+    	'slide3' => WP_PLUGIN_URL.'/vslider/images/slide3.jpg',
         'target' => 'none',
         'navstyle' => 'none',
         'arrstyle' => 'none',
@@ -520,7 +523,7 @@ if ($_GET['updated'] == 'true') {
 add_action('admin_menu', 'vslider_plugin_admin_menu');
 
 function vslider_plugin_admin_menu() {
-    add_menu_page('Add vSlider ', 'vSlider', 'publish_posts', 'vslider', 'vslider_main', WP_CONTENT_URL.'/plugins/vslider/images/icon.png');
+    add_menu_page('Add vSlider ', 'vSlider', 'publish_posts', 'vslider', 'vslider_main', WP_PLUGIN_URL.'/vslider/images/icon.png');
       add_submenu_page('vslider','Edit vslider','Edit vSlider', 'publish_posts', 'add-vSlider', 'vslider_admin_page');
      add_submenu_page('vslider','Uninstall vslider','Uninstall vSlider', 'publish_posts', 'uninstall-vSlider', 'vslider_uninstall');
     add_submenu_page('vslider','vSlider Tutorials ','Tutorials & Faq', 'publish_posts', 'vslider-tutorials', 'vslider_tutorials_page');
@@ -961,7 +964,7 @@ function vslider($option='vslider_options'){
             {    
                 $src = wp_get_attachment_image_src( get_post_thumbnail_id($post->ID), array( 300,300 ), false, '' ); 
                 $thumbnailSrc = $src[0]; 
-                $img_url = WP_CONTENT_URL.'/plugins/vslider/timthumb.php?src='.$thumbnailSrc.'&amp;w='.$options['width'].'&amp;h='.$options['height'].'&amp;zc=1&amp;q='.$options['quality'];
+                $img_url = WP_PLUGIN_URL.'/vslider/timthumb.php?src='.$thumbnailSrc.'&amp;w='.$options['width'].'&amp;h='.$options['height'].'&amp;zc=1&amp;q='.$options['quality'];
       
                 ?>
                 <img src="<?php echo $img_url; ?>" alt="" />
@@ -977,7 +980,7 @@ function vslider($option='vslider_options'){
                     $firstsrc = $matches [1] [0];
                     if($options['timthumb'])    // get the src of the post thumbnail
                     {  $image = str_replace(get_bloginfo('siteurl'), '', $firstsrc); 
-                       $img_url = WP_CONTENT_URL.'/plugins/vslider/timthumb.php?src='.urlencode($image).'&amp;w='.$options['width'].'&amp;h='.$options['height'].'&amp;zc=1&amp;q='.$options['quality'];
+                       $img_url = WP_PLUGIN_URL.'/vslider/timthumb.php?src='.urlencode($image).'&amp;w='.$options['width'].'&amp;h='.$options['height'].'&amp;zc=1&amp;q='.$options['quality'];
                        }else {$img_url= $firstsrc;}
                         ?>
                         <div style="background: url(<?php echo $img_url; ?>) no-repeat;<?php echo "width:".$options['width'].";height:".$options['height'].";"; ?>" alt="">
@@ -1001,7 +1004,7 @@ function vslider($option='vslider_options'){
        <?php 
        if($options['timthumb']){
        $image = str_replace(get_bloginfo('siteurl'), '', $options['slide'.$x.'']); 
-       $img_url =WP_CONTENT_URL.'/plugins/vslider/timthumb.php?src='.urlencode($image).'&amp;w='.$options['width'].'&amp;h='.$options['height'].'&amp;zc=1&amp;q='.$options['quality'];
+       $img_url =WP_PLUGIN_URL.'/vslider/timthumb.php?src='.urlencode($image).'&amp;w='.$options['width'].'&amp;h='.$options['height'].'&amp;zc=1&amp;q='.$options['quality'];
        }else{
         $img_url=$options['slide'.$x.''];
        }
