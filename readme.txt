@@ -1,16 +1,21 @@
-=== vSlider Multi Image Slider for WordPress ===
+=== vSlider Responsive Multi Image Slider for WordPress ===
 Contributors: Mr. Vibe
 Donate link: http://vibethemes.com/showcase/
 Tags: mutiple image slider,banner, slider, sidebar, widget, plugin,vslider,wordpress image slider plugin
 Requires at least: 2.7
-Tested up to: 3.3
-Stable tag: 4.1.2
+Tested up to: 3.4.1
+Stable tag: 4.2.0
+License: GPLv2
 
-Now Host unlimited image sliders,featured image galleries into your WordPress theme! VibeThemes Join the Vibe at VibeThemes.
+Integrate Responsive Header Slider into your WordPress theme! VibeThemes Join the Vibe at VibeThemes.
 == Description ==
 Showcase your portfolio, animate your header or manage your banners with vSlider 4.0+. vSlider is a wordpress image slider plugin where you can host multiple image sliders and upto 20 slides per slider.
 = More Features =
 <ul>
+<li>[NEW] Responsive Slider Option</li>
+<li>[NEW] HTML-ized Caption</li>
+<li>[NEW] Create custom Multiple settings</li>
+<li>[NEW] Create custom Multiple Themes option</li>
 <li>Get First or Featured Images from Post or Page</li>
 <li>Load images faster with `Image caching`</li>
 <li>Custom slider Width and Height</li>
@@ -22,9 +27,12 @@ Showcase your portfolio, animate your header or manage your banners with vSlider
 <li>Custom image button styles</li>
 <li>`9 Image transition sffects`</li>
 <li>Navigation button placement</li>
-<li>`Short Code and inbuilt Widget`</li>
+<li>Short Code and inbuilt Widget</li>
 <li>Custom border,color and radius</li>
-<li>[NEW] Randmize Image Sequence</li>
+<li>Randmize Image Sequence</li>
+<li>Container Float, place beside your posts text.</li>
+<li>[NEW] Faster OOPS structure.</li>
+<li>[NEW] Loading Gif, till the slide loads.</li>
 </ul>  
 = More Plugins =
 <a href="http://www.vibethemes.com/showcase" target="_blank">More WordPress Plugins by Me.</a>
@@ -45,7 +53,7 @@ To insert this code in your template/theme pages. (if you have installed php-exe
 `<?php if (function_exists('vslider')) { vslider('abc'); }?>` (where `abc` is vslider name)
 
 * Do not Forget to check the vSlider Tutorials and Faq's in vSlider Admin panel inside the Plugin. vSlider Tutorials are updated on a regular basis, you can request for a custom tutorial <a href="http://www.vibethemes.com/forum/forum/vslider-support">here</a>
-* Credits: <a href="http://workshop.rs/projects/coin-slider/" target="_blank">Coin Slider</a>, <a href="http://VibeThemes.com" target="_blank">VibeThemes</a>
+* Credits: <a href="nivo.dev7studios.com/" target="_blank">Nivo Slider</a>, <a href="http://VibeThemes.com" target="_blank">VibeThemes</a>
 
 == Installation ==
 
@@ -83,6 +91,12 @@ vSlider Developer Version <a href="http://www.vibethemes.com/vsliderdev-for-deve
 
 *<a href="http://www.vibethemes.com/vslider-4-0-now-available-for-download/" target="_blank">Multiple sliders on Single Page Demo</a>
 == Changelog ==
+= 4.2.0 =
+1. Responsive slider option
+2. HTML captions
+3. No extra tables required
+4. Migrated from older version
+5. Major architechtural change
 = 4.1.2 =
 1. Updated Timthumb
 2. Resolved fade issue
