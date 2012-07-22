@@ -389,41 +389,42 @@ function edit_vslidersettings($setting)
              <h3 style="padding:5px 10px;"><?php _e("Settings II", 'vslider'); ?> </h3>
             <div style="padding:0 10px;">
             <p><?php _e("Show Direction Navigation", 'vslider'); ?>:
-                <select name="directionNav">
-                    <option value="true" <?php selected(true, $setting->directionNav); ?>>Yes</option>
-                    <option value="false" <?php selected(false, $setting->directionNav); ?>>No</option>
-                </select>       
-            </p>
-            <p><?php _e("Show Direction Navigation on Hover only", 'vslider'); ?>:
-                <select name="directionNavHide">
-                    <option value="true" <?php selected(true, $setting->directionNavHide); ?>>Yes</option>
-                    <option value="false" <?php selected(false, $setting->directionNavHide); ?>>No</option>
-                </select>       
-            </p>
-            <p><?php _e("Show Control Navigation", 'vslider'); ?>:
-                <select name="controlNav">
-                    <option value="true" <?php selected(true, $setting->controlNav); ?>>Yes</option>
-                    <option value="false" <?php selected(false, $setting->controlNav); ?>>No</option>
-                </select>      
-            </p>
-            <p><?php _e("Show Thumbnails for Control Navigation", 'vslider'); ?>:
-                <select name="controlNavThumbs">
-                    <option value="true" <?php selected(true, $setting->controlNavThumbs); ?>>Yes</option>
-                    <option value="false" <?php selected(false, $setting->controlNavThumbs); ?>>No</option>
-                </select>     
-            </p>
-            <p><?php _e("Pause vSlider on Mouse Hover", 'vslider'); ?>:
-                <select name="pauseOnHover">
-                    <option value="true" <?php selected(true, $setting->pauseOnHover); ?>>Yes</option>
-                    <option value="false" <?php selected(false, $setting->pauseOnHover); ?>>No</option>
-                </select>       
-            </p>
-            <p><?php _e("Manual Advance vSlider", 'vslider'); ?>:
-                <select name="manualAdvance">
-                    <option value="true" <?php selected(true, $setting->manualAdvance); ?>>Yes</option>
-                    <option value="false" <?php selected(false, $setting->manualAdvance); ?>>No</option>
-                </select>       
-            </p>
+            
+            <select name="directionNav">
+                               <option value="1" <?php selected(1, $setting->directionNav); ?>>Yes</option>
+                               <option value="0" <?php selected(0, $setting->directionNav); ?>>No</option>
+                           </select>       
+                       </p>
+                       <p><?php _e("Show Direction Navigation on Hover only", 'vslider'); ?>:
+                           <select name="directionNavHide">
+                               <option value="1" <?php selected(1, $setting->directionNavHide); ?>>Yes</option>
+                               <option value="0" <?php selected(0, $setting->directionNavHide); ?>>No</option>
+                           </select>       
+                       </p>
+                       <p><?php _e("Show Control Navigation", 'vslider'); ?>:
+                           <select name="controlNav">
+                               <option value="1" <?php selected(1, $setting->controlNav); ?>>Yes</option>
+                               <option value="0" <?php selected(0, $setting->controlNav); ?>>No</option>
+                           </select>      
+                       </p>
+                       <p><?php _e("Show Thumbnails for Control Navigation", 'vslider'); ?>:
+                           <select name="controlNavThumbs">
+                               <option value="1" <?php selected(1, $setting->controlNavThumbs); ?>>Yes</option>
+                               <option value="0" <?php selected(0, $setting->controlNavThumbs); ?>>No</option>
+                           </select>     
+                       </p>
+                       <p><?php _e("Pause vSlider on Mouse Hover", 'vslider'); ?>:
+                           <select name="pauseOnHover">
+                               <option value="1" <?php selected(1, $setting->pauseOnHover); ?>>Yes</option>
+                               <option value="0" <?php selected(0, $setting->pauseOnHover); ?>>No</option>
+                           </select>       
+                       </p>
+                       <p><?php _e("Manual Advance vSlider", 'vslider'); ?>:
+                           <select name="manualAdvance">
+                               <option value="1" <?php selected(1, $setting->manualAdvance); ?>>Yes</option>
+                               <option value="0" <?php selected(0, $setting->manualAdvance); ?>>No</option>
+                           </select>  
+               </p>
             <p><?php _e("Previous button Text", 'vslider'); ?>:
                 <input name="prevText" class="regular-text" value="<?php echo $setting->prevText; ?>" />       
             </p>
