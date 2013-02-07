@@ -3,8 +3,8 @@ Contributors: Mr. Vibe
 Donate link: http://vibethemes.com/showcase/
 Tags: mutiple image slider,banner, slider, sidebar, widget, plugin,vslider,wordpress image slider plugin
 Requires at least: 2.7
-Tested up to: 3.4.1
-Stable tag: 4.1.1
+Tested up to: 3.5.1
+Stable tag: 4.1.2
 License: GPLv2
 
 Integrate Responsive Header Slider into your WordPress theme! VibeThemes Join the Vibe at VibeThemes.
