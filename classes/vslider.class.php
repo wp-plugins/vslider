@@ -134,7 +134,7 @@ function get_vsliders()
     $table_name = $wpdb->prefix . "vslider"; 
     $vslider_data = $wpdb->get_results("SELECT * FROM $table_name ORDER BY id");
     ?>
-<form method="post" action="<?php echo vslider_admin_url( 'admin.php').'?page=vslider5&tab=main'; ?>">
+<form method="post" action="<?php echo vslider_admin_url( 'admin.php').'?page=vslider&tab=main'; ?>">
     <?php wp_nonce_field('get_vslider_settings'); ?>
     <table class="wp-list-table widefat fixed" cellspacing="0">
     <thead>
@@ -170,13 +170,13 @@ function get_vsliders()
              <td valign="middle" style="padding: 10px;"><span class="vslider_name"> '.$data->option_name.' </span>
              <div class="row-actions">
              <span class="edit">
-             <a href="'. wp_nonce_url(vslider_admin_url('admin.php').'?page=vslider5&tab=settings&vslider='.$data->option_name .''). '">' . __('Edit','vslider') . '</a>
+             <a href="'. wp_nonce_url(vslider_admin_url('admin.php').'?page=vslider&tab=settings&vslider='.$data->option_name .''). '">' . __('Edit','vslider') . '</a>
              </span> |<span class="edit">
-             <a href="'. wp_nonce_url(vslider_admin_url('admin.php').'?page=vslider5&tab=images&vslider='.$data->option_name .''). '">' . __('Images','vslider') . '</a>
+             <a href="'. wp_nonce_url(vslider_admin_url('admin.php').'?page=vslider&tab=images&vslider='.$data->option_name .''). '">' . __('Images','vslider') . '</a>
              </span> | <span class="edit">
-             <a href="'. wp_nonce_url(vslider_admin_url('admin.php').'?page=vslider5&export=1&vslider='.$data->option_name .''). '">' . __('Export','vslider') . '</a>
+             <a href="'. wp_nonce_url(vslider_admin_url('admin.php').'?page=vslider&export=1&vslider='.$data->option_name .''). '">' . __('Export','vslider') . '</a>
              </span> |  <span class="delete">
-             <a href="'. wp_nonce_url(vslider_admin_url('admin.php').'?page=vslider5&delete=1&vslider='.$data->option_name .''). '"  onClick="return confirm( \'Are you sure you want to delete the '.$data->option_name .' vSlider ?\' )">' . __('Delete','vslider') . '</a>
+             <a href="'. wp_nonce_url(vslider_admin_url('admin.php').'?page=vslider&delete=1&vslider='.$data->option_name .''). '"  onClick="return confirm( \'Are you sure you want to delete the '.$data->option_name .' vSlider ?\' )">' . __('Delete','vslider') . '</a>
              </span>
              </td>
              <td style="padding: 10px;" class="vslider_shortcode">[vslider name=""]</td>    
@@ -239,7 +239,7 @@ function save_settings($name){
         $vslider_data = $wpdb->get_results("SELECT * FROM $table_name ORDER BY id");
     
         ?>
-       <form method="post" action="<?php echo vslider_admin_url( 'admin.php').'?page=vslider5&tab=settings'; ?>">
+       <form method="post" action="<?php echo vslider_admin_url( 'admin.php').'?page=vslider&tab=settings'; ?>">
         <?php wp_nonce_field('get_vslider_settings'); ?>
             <table class="wp-list-table widefat fixed tr_select_slider">
        <tr>
@@ -301,7 +301,7 @@ function images(){
         $vslider_data = $wpdb->get_results("SELECT * FROM $table_name ORDER BY id");
          
         ?>
-       <form method="post" action="<?php echo vslider_admin_url( 'admin.php').'?page=vslider5&tab=images'.(isset($vslider)?'&vslider='.$vslider_name : '').''; ?>">
+       <form method="post" action="<?php echo vslider_admin_url( 'admin.php').'?page=vslider&tab=images'.(isset($vslider)?'&vslider='.$vslider_name : '').''; ?>">
         <?php wp_nonce_field('get_vslider_images'); ?>
        <table class="wp-list-table widefat fixed">
        <tr class="tr_select_images">
