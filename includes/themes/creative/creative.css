@@ -1,0 +1,60 @@
+/* 
+    Document   : creative
+    Created on : Feb 9, 2013, 4:49:54 PM
+    Author     : Mr.Vibe
+    Description: Additional Styling for creative Theme for vSlider
+*/
+
+
+.vslider.theme-creative{
+    
+} 
+
+
+.vslider.direction_nav-creative .vslider-direction-nav a,
+.vslider.theme-creative .vslider-direction-nav a {
+    width: 23px; 
+    height: 35px;
+    top:50%;
+}
+.vslider.direction_nav-creative .vslider-direction-nav a.vslider-next,
+.vslider.theme-creative .vslider-direction-nav a.vslider-next {
+    background: url(right_arrow.png) no-repeat 0 0; 
+    right:-30px;
+    }
+.vslider.direction_nav-creative .vslider-direction-nav a.vslider-prev,    
+.vslider.theme-creative .vslider-direction-nav a.vslider-prev {
+background: url(left_arrow.png) no-repeat 0 0; 
+   left:-30px;
+}
+.vslider.theme-creativehover .vslider-next {opacity: 0.8;}
+.vslider.theme-creative:hover .vslider-prev {opacity: 0.8; }
+.vslider.theme-creative:hover .vslider-next:hover, .vslider.theme-creative:hover .vslider-prev:hover {opacity: 1;}
+
+
+
+.vslider.theme-creative .vslider-control-nav,
+.vslider.control_nav-creative .vslider-control-nav{
+    bottom:-20px;
+}
+
+.vslider.theme-creative .vslider-control-paging li a,
+.vslider.control_nav-creative ol.vslider-control-paging li a{
+    width: 13px; 
+    height: 13px; 
+    display: block; 
+    background: url(control_nav.png); 
+    background-position: 0 0;
+    border-radius:0;
+    border:none;
+    box-shadow:none;
+}
+.vslider.theme-creative .vslider-control-paging li a:hover,
+.vslider.control_nav-creative .vslider-control-paging li a:hover{ 
+    background-position: 0 13px;
+}
+.vslider.theme-creative .vslider-control-paging li a.vslider-active,
+.vslider.control_nav-creative .vslider-control-paging li a.vslider-active{ 
+        background-position: 0 100%;
+    
+}
