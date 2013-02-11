@@ -12,6 +12,7 @@ vSlider 5.0+ is a "No Bloat", Fast and easy to setup Slider. With strong focus t
 = More Features =
 <ul>
 <li>Unlimited, Responsive Sliders with option to fix Width/height.</li>
+<li>Live Preview</li>
 <li>Drag Drop Interface</li>
 <li>Slide Generator : Generate slides from 
 <ul><li>a. Supports custom Post Type.</li>
@@ -20,7 +21,7 @@ vSlider 5.0+ is a "No Bloat", Fast and easy to setup Slider. With strong focus t
 <li>d. Generate Caption Heading and Descriptions from Title & excerpts.</li>
 <li>e. Change Image/Title/Excerpt.</li>
 <li>f. Regenerate Slides and append to existing slides.</li></ul></li>
-<li>Works with Custom Post Types (Support Woo Commerce).</li>
+<li>Works with Custom Post Types.</li>
 <li>Option to show LightBox images.</li>
 <li>8 Slide layouts</li>
 <li>Add Custom CSS Classes and Custom CSS Styling.</li>
@@ -79,7 +80,6 @@ Method 2
 
 == Frequently Asked Questions ==
 * No images shown in vSlider
-Check permissions for cache folder in vslider to 757
 *  
 * Use Tutorials and Faq's in the vSlider Admin menu
 * Free vSlider Support
@@ -87,8 +87,12 @@ Check permissions for cache folder in vslider to 757
  
 
 == Screenshots ==
-For Demo <a href="http://www.vibethemes.com/">Click Here</a>
-*<a href="http://www.vibethemes.com/vslider-4-0-now-available-for-download/" target="_blank">Multiple sliders on Single Page Demo</a>
+vSlider Admin Panel Screenshots:
+vSlider Generate [Create|Delete|Edit|Images|Export| Import|Bulk Functions]
+vSlider Success notification [Create|Delete|Edit|Images|Export| Import|Bulk Functions]
+vSlider Images [Generate Images | Live Image Preview | Edit Images | Theme | Settings]
+vSlider Captions [Supports HTML & Shortcodes]
+vSlider Generate Slides
 == Changelog ==
 
 = 5.0.0 =
