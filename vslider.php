@@ -1,63 +1,41 @@
 <?php
+
 /*
-    Plugin Name: vSlider
-    Plugin URI: http://www.Vibethemes.com/vslider-wordpress-image-slider-plugin/
-    Description: Implementing a featured image gallery into your WordPress theme has never been easier! Showcase your portfolio, animate your header or manage your banners with vSlider.Create unlimited image sliders, the best wordpress image slider plugin vSlider by  <a href="http://www.vibethemes.com/" title="premium wordpress themes">VibeThemes</a>.
-    Author: Mr.Vibe
-    Version: 4.2
-    Author URI: http://www.Vibethemes.com/
-
-	vSlider is released under GPL:
-	http://www.opensource.org/licenses/gpl-license.php
+Plugin Name: vSlider
+Plugin URI: http://www.vibethemes.com
+Description: Implementing a featured image gallery into your WordPress theme has never been easier! Showcase your portfolio, animate your header or manage your banners with vSlider.Create unlimited image sliders, the best wordpress image slider plugin vSlider by  <a href="http://www.vibethemes.com/" title="premium wordpress themes">VibeThemes</a>.
+Author: Mr.Vibe@VibeThemes.Com
+Version: 5.0.0
+Author URI: http://www.vibethemes.com
+Text Domain: vslider
+Domain Path: /includes/lang/
 */
-require_once(ABSPATH .'wp-includes/pluggable.php');
-// Hook for adding admin menus
-include ('vs_config.php');
-include ('class/setting.php');
-include ('class/theme.php');
-include ('class/vslider.php');
-include ('vs_include.php');
-include ('vs_help.php');
-include ('build/manage.php');
-include ('build/admin.php');
 
-register_activation_hook(__FILE__,'vslider_plugin_install');
-register_deactivation_hook(__FILE__,'vslider_plugin_uninstall');
-add_action('wp_enqueue_scripts', 'vs_init_scripts');
-add_action('wp_enqueue_scripts', 'vs_init_styles');
+/*      vSlider is released under GPL v 2:
+	http://www.opensource.org/licenses/gpl-license.php
 
-add_action('admin_print_scripts', 'admin_init_script');
-add_action('admin_print_styles', 'admin_init_style');
-    
-add_action('admin_menu', 'vslider_admin_menu');
-function vslider_admin_menu() {
-    add_menu_page('Add vSlider ', 'vSlider', VSLIDER_ACCESS, 'vslider', 'manage_vsliders', WP_PLUGIN_URL.'/vslider/images/icon.png');
-    }
+	THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND
+	ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED
+	WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE
+	DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT OWNER OR CONTRIBUTORS BE LIABLE FOR
+	ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES
+	(INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES;
+	LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON
+	ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
+	(INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS
+	SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+*/
 
-    function vslider($vslider_name)
-    {   
-        $vslider=new vslider();
-        $theme= new vslider_themes();
-        $setting= new vslider_settings();
-        $vs=get_option($vslider_name);
-        if(is_string($vs)){
-        $vslider=unserialize($vs);
-        }else $vslider=$vs;
-        
-        $set=get_option($vslider->settings);
-        $th=get_option($vslider->themes);
-        
-        
-        if(is_string($set)){
-        $setting=unserialize($set);
-        }else $setting=$set;
-        
-        if(is_string($th)){
-        $theme=unserialize($th);
-        }else $theme=$th;
-        
-        $theme->generate_theme($vslider->name);        
-        $vslider->generate_vslider();
-        $setting->generate_setting($vslider->name);
-  }        
+/*====== BEGIN VSLIDER======*/
+
+include_once('includes/config.php');
+include_once('includes/init.php');
+include_once('classes/vslider.class.php');
+include_once('includes/functions.php');
+include_once('includes/register.php');
+include_once('includes/shortcode.php');
+include_once('includes/widget.php');
+
+/*====== END VSLIDER ======*/
+
 ?>

@@ -1,0 +1,298 @@
+/*
+ * vSlider Based on jQuery FlexSlider v2.0
+ * http://www.woothemes.com/vslider/
+ *
+ * Copyright 2012 WooThemes
+ * Free to use under the GPLv2 license.
+ * http://www.gnu.org/licenses/gpl-2.0.html
+ *
+ * Contributing author: Tyler Smith (@mbmufffin)
+ * Contributing author: Mr.Vibe (@vibethemes)
+ */
+
+ 
+/* Browser Resets */
+.vslider-container a:active,
+.vslider a:active,
+.vslider-container a:focus,
+.vslider a:focus  {outline: none;}
+.vslider ul.slides,
+.vslider ol.vslider-control-nav,
+.vslider ul.vslider-direction-nav {margin: 0; padding: 0; list-style: none;} 
+
+/* vslider Necessary Styles
+*********************************/ 
+.vslider {margin: 0; padding: 0;}
+.vslider .slides{list-style:none;}
+.vslider .slides > li {display: none; -webkit-backface-visibility: hidden;} /* Hide the slides before the JS is loaded. Avoids image jumping */
+.vslider .slides img {width: 100%; display: block;}
+.vslider-pauseplay span {text-transform: capitalize;}
+
+/* Clearfix for the .slides element */
+.slides:after {content: "."; display: block; clear: both; visibility: hidden; line-height: 0; height: 0;} 
+html[xmlns] .slides {display: block;} 
+* html .slides {height: 1%;}
+
+/* No JavaScript Fallback */
+/* If you are not using another script, such as Modernizr, make sure you
+ * include js that eliminates this class on page load */
+.no-js .slides > li:first-child {display: block;}
+
+
+/* vslider Default Theme
+*********************************/
+.vslider {margin: 0 0 60px; background: transparent; border: none; position: relative;
+         -webkit-border-radius: 4px; -moz-border-radius: 4px; -o-border-radius: 4px; border-radius: 4px; 
+         zoom: 1;
+}
+
+.vslider-viewport {max-height: 2000px; -webkit-transition: all 1s ease; -moz-transition: all 1s ease; transition: all 1s ease;}
+.loading .vslider-viewport {max-height: 300px;}
+.vslider .slides {zoom: 1;}
+
+.carousel li {margin-right: 5px}
+
+
+/* Direction Nav */
+.vslider-direction-nav {*height: 0;}
+.vslider-direction-nav a {width: 30px; height: 30px;margin: -20px 0 0; display: block; background: url(../themes/default/img/bg_direction_nav.png) no-repeat 0 0; position: absolute; top: 50%; z-index: 10; cursor: pointer; text-indent: -9999px; opacity: 0; -webkit-transition: all .3s ease;}
+.vslider-direction-nav .vslider-next {background-position: 100% 0; right: -36px; }
+.vslider-direction-nav .vslider-prev {left: -36px;}
+.vslider:hover .vslider-next {opacity: 0.8; right: 5px;}
+.vslider:hover .vslider-prev {opacity: 0.8; left: 5px;}
+.vslider:hover .vslider-next:hover, .vslider:hover .vslider-prev:hover {opacity: 1;}
+.vslider-direction-nav .vslider-disabled {opacity: .3!important; filter:alpha(opacity=30); cursor: default;}
+
+/* Control Nav */
+.vslider-control-nav {width: 100%; position: absolute; bottom: -30px; text-align: center;}
+.vslider .vslider-control-nav li {margin: 0 3px; display: inline-block; zoom: 1; *display: inline;}
+
+.vslider-control-paging li a {
+    width: 11px; 
+    height: 11px; 
+    display: block; 
+    background: #e6e6e6; 
+    background: rgba(230,230,230,0.5); 
+    cursor: pointer; 
+    text-indent: -9999px; 
+    -webkit-border-radius: 20px; 
+    -moz-border-radius: 20px; 
+    -o-border-radius: 20px; 
+    border-radius: 20px; 
+    box-shadow: inset 0 0 3px rgba(0,0,0,0.3);
+    
+}
+.vslider-control-paging li a:hover { 
+    background: #90c2ef; 
+    background: rgba(144,194,239,0.7); 
+}
+.vslider-control-paging li a.vslider-active { 
+    background: #529DE2; 
+    background: rgba(82,157,226,0.9); 
+    cursor: default; 
+}
+
+.vslider-control-thumbs {margin: 5px 0 0; position: static; overflow: hidden;}
+.vslider-control-thumbs li {width: 25%; float: left; margin: 0;}
+.vslider-control-thumbs img {width: 100%; display: block; opacity: .7; cursor: pointer;}
+.vslider-control-thumbs img:hover {opacity: 1;}
+.vslider-control-thumbs .vslider-active {opacity: 1; cursor: default;}
+
+@media screen and (max-width: 860px) {
+  .vslider-direction-nav .vslider-prev {opacity: 1; left: 0;}
+  .vslider-direction-nav .vslider-next {opacity: 1; right: 0;}
+}
+
+ul.vslider-direction-nav{
+    list-style:none !important; 
+}
+.vslider ul.slides,
+.vslider ul.slides li {
+margin: 0;
+position: relative;
+}
+
+/*====== Captions ======*/
+
+.vslider .vslider-caption h4,
+.vslider .vslider-caption p{
+    color:#FFF;
+    padding:5px 0;
+    margin:0;
+}
+
+.vslider .vslider-caption h4{
+    font-size:16px;
+    line-height:16px;
+    padding:20px 10px 5px;
+}
+
+.vslider .vslider-caption p{
+    font-size:12px;
+    line-height:16px;
+    padding:5px 10px 20px;
+}
+
+/*====== Caption Default ======*/
+
+.vslider .vslider-caption{
+    position:absolute;
+    bottom:0;
+    left:0;
+    z-index:9999;
+    background: url('../images/darkbg.png');
+}
+
+
+/*====== Caption Left ======*/
+
+.vslider.caption-left .vslider-caption {
+    position:absolute;
+    top:0;
+    left:0;
+    max-width:33%;
+    z-index:9999;
+    background: url('../images/darkbg.png');
+    padding:5px 10px;
+}
+
+
+/*====== Caption Right ======*/
+
+.vslider.caption-right .vslider-caption {
+    position:absolute;
+    top:0;
+    right:0;
+    margin-left: 66%;
+    z-index:9999;
+    background: url('../images/darkbg.png');
+    padding:5px 10px;
+}
+
+/*====== Caption top ======*/
+
+.vslider.caption-top .vslider-caption {
+    position:absolute;
+    top:0;
+    left:0;
+    max-height:20%;
+    z-index:9999;
+    background: url('../images/darkbg.png');
+    padding:5px 10px;
+}
+
+/*====== Caption Lefttop ======*/
+
+.vslider.caption-lefttop .vslider-caption {
+    position:absolute;
+    top:0;
+    left:0px;
+    max-width:33%;
+    max-height:40%;
+    display:block;
+    z-index:9999;
+    background: url('../images/darkbg.png');
+    padding:5px 10px;
+}
+
+
+/*====== Caption Righttop ======*/
+
+.vslider.caption-righttop .vslider-caption {
+    position:absolute;
+    top:0;
+    right:0px;
+    margin-left:66%;
+    max-height:40%;
+    display:block;
+    z-index:9999;
+    background: url('../images/darkbg.png');
+    padding:5px 10px;
+}
+
+
+/*====== Caption Leftbottom ======*/
+
+.vslider.caption-leftbottom .vslider-caption {
+    position:absolute;
+    bottom:0;
+    left:0px;
+    max-width:33%;
+    max-height:40%;
+    display:block;
+    z-index:9999;
+    background: url('../images/darkbg.png');
+    padding:5px 10px;
+}
+
+
+/*====== Caption Lefttop ======*/
+
+.vslider.caption-rightbottom .vslider-caption {
+    position:absolute;
+    bottom:0;
+    right:0px;
+    margin-left:66%;
+    max-height:40%;
+    display:block;
+    z-index:9999;
+    background: url('../images/darkbg.png');
+    padding:5px 10px;
+}
+
+
+/*====== Caption Lefttop ======*/
+
+.vslider.caption-lefttop .vslider-caption {
+    position:absolute;
+    top:0;
+    left:0px;
+    max-width:33%;
+    max-height:40%;
+    display:block;
+    z-index:9999;
+    background: url('../images/darkbg.png');
+    padding:5px 10px;
+}
+
+/*========= Shadows ======= */
+.vslider img.shadow{
+    width:100%;
+    box-shadow:none;
+    border-radius:none;
+}
+
+
+.vslider.shadow-hover .vslider-viewport{
+    padding-bottom: 60px;
+}
+
+.vslider.shadow-hover,
+.vslider.shadow-center,
+.vslider.shadow-corner,
+.vslider.shadow-perspective{
+    padding-bottom: 40px;
+    margin:0;
+}
+
+
+.vslider.shadow-center .vslider-viewport,
+.vslider.shadow-corner .vslider-viewport,
+.vslider.shadow-perspective .vslider-viewport{
+    padding-bottom: 40px;
+}
+.vslider.shadow-hover .vslider-control-nav{
+    bottom:10px;
+}
+.vslider.shadow-center .vslider-control-nav,
+.vslider.shadow-corner .vslider-control-nav,
+.vslider.shadow-perspective .vslider-control-nav {
+    bottom:20px;
+}
+
+.vslider.shadow-corner img.shadow{
+    padding-bottom: 0px;
+    box-shadow:none;
+    display:block;
+}
+

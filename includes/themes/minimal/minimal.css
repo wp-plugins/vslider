@@ -1,0 +1,60 @@
+/* 
+    Document   : minimal
+    Created on : Feb 9, 2013, 4:49:54 PM
+    Author     : Mr.Vibe
+    Description: Additional Styling for Minimal Theme for vSlider
+*/
+
+
+.vslider.theme-minimal{
+    
+} 
+
+
+.vslider.direction_nav-minimal ul.vslider-direction-nav a,
+.vslider.theme-minimal .vslider-direction-nav a {
+    width: 45px; 
+    height: 45px;
+    top:50%;
+    background: url(../minimal/arrows.png) no-repeat 0 0; 
+}
+.vslider.direction_nav-minimal ul.vslider-direction-nav a.vslider-next,
+.vslider.theme-minimal .vslider-direction-nav a.vslider-next {
+    background-position: 100% 0;
+    right:0;
+    }
+.vslider.direction_nav-minimal .vslider-direction-nav a.vslider-prev,    
+.vslider.theme-minimal .vslider-direction-nav a.vslider-prev {
+   left:0;
+}
+.vslider.theme-minimalhover .vslider-next {opacity: 0.8;}
+.vslider.theme-minimal:hover .vslider-prev {opacity: 0.8; }
+.vslider.theme-minimal:hover .vslider-next:hover, .vslider.theme-minimal:hover .vslider-prev:hover {opacity: 1;}
+
+
+
+.vslider.theme-minimal .vslider-control-nav,
+.vslider.control_nav-minimal .vslider-control-nav{
+    bottom:10px;
+}
+
+.vslider.theme-minimal .vslider-control-paging li a,
+.vslider.control_nav-minimal ol.vslider-control-paging li a{
+    width: 3px; 
+    height: 3px; 
+    display: block; 
+    background: #e6e6e6; 
+    border: 3px solid #E6e6e6;
+    background: rgba(230,230,230,0.5); 
+    border-radius:0;
+}
+.vslider.theme-minimal .vslider-control-paging li a:hover,
+.vslider.control_nav-minimal .vslider-control-paging li a:hover{ 
+    background: #666;
+}
+.vslider.theme-minimal .vslider-control-paging li a.vslider-active,
+.vslider.control_nav-minimal .vslider-control-paging li a.vslider-active{ 
+    background: #FFF; 
+    border-color: #333;
+    
+}

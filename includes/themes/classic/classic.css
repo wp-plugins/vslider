@@ -1,0 +1,52 @@
+/* 
+    Document   : classic
+    Created on : Feb 9, 2013, 4:49:54 PM
+    Author     : Mr.Vibe
+    Description: Additional Styling for classic Theme for vSlider
+*/
+
+
+.vslider.theme-classic{
+    
+} 
+
+
+.vslider.direction_nav-classic ul.vslider-direction-nav a,
+.vslider.theme-classic .vslider-direction-nav a {
+    width: 40px;
+    height: 40px;
+    top:50%;
+    opacity: 0.6;
+}
+.vslider.direction_nav-classic .vslider-direction-nav a.vslider-next,
+.vslider.theme-classic .vslider-direction-nav a.vslider-next {
+    background: url(arrow_right.png) no-repeat 0 0; 
+    background-position: 0 0;
+    right:-20px;
+    }
+
+.vslider.direction_nav-classic ul.vslider-direction-nav a.vslider-next:hover,
+.vslider.theme-classic .vslider-direction-nav a.vslider-next:hover {
+	background-position: 0 100%;
+}    
+
+    
+.vslider.direction_nav-classic ul.vslider-direction-nav a.vslider-prev,    
+.vslider.theme-classic .vslider-direction-nav a.vslider-prev {
+   background: url(arrow_left.png) no-repeat 0 0; 
+   background-position: 0 0; 
+   left:-20px;
+}
+
+.vslider.direction_nav-classic .vslider-direction-nav a.vslider-prev:hover,    
+.vslider.theme-classic .vslider-direction-nav a.vslider-prev:hover{
+	background-position: 0 100%;
+}
+
+
+.vslider.theme-classichover .vslider-next {opacity: 0.8;}
+.vslider.theme-classic:hover .vslider-prev {opacity: 0.8; }
+.vslider.theme-classic:hover .vslider-next:hover, .vslider.theme-classic:hover .vslider-prev:hover {opacity: 1;}
+
+
+
