@@ -134,4 +134,5 @@ vSlider Generate Slides
 
 == Upgrade Notice ==
 
-N/A
+= 5.0.0 =
+Removed Timthumb Dependency, Added Responsiveness, No Bloat, easy to manage.
