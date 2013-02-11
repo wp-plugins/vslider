@@ -4,7 +4,7 @@ Donate link: http://www.vibethemes.com/
 Tags: mutiple image slider,banner, slider, sidebar, widget, plugin,vslider,wordpress image slider plugin
 Requires at least: 2.7
 Tested up to: 3.5.1
-Stable tag: 5.0.0
+Stable tag: 4.1.2
 
 Fast, Quick and Easy to setup Responsive Image Sliders for your WordPress Site. Join the Vibe with VibeThemes.
 == Description ==
