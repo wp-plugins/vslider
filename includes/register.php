@@ -232,7 +232,7 @@ function vslider_settings_page() {
 }
 
 
-function getall_taxonomy_terms(){
+function get_all_taxonomy_terms(){
 $taxonomies=get_taxonomies('','names'); 
 $termchildren = array();
     foreach ($taxonomies as $taxonomy ) {

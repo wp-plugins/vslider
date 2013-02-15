@@ -244,7 +244,7 @@ function vslider_generate_images_callback() {
 	     <select id="taxonomy_term">
                  <option value=''>All</option>
                  <?php
-                 $tax_terms=getall_taxonomy_terms(); 
+                 $tax_terms=get_all_taxonomy_terms(); 
                     foreach ($tax_terms as $term ) {
                      echo '<option value="'.$term.'">'.$term.'</option>';
                     }
