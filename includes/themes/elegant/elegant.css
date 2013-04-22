@@ -1,0 +1,73 @@
+/* 
+    Document   : elegant
+    Created on : Feb 9, 2013, 4:49:54 PM
+    Author     : Mr.Vibe
+    Description: Additional Styling for elegant Theme for vSlider
+*/
+
+
+.vslider.theme-elegant{
+  padding-bottom: 20px;  
+} 
+
+
+.vslider.direction_nav-elegant .vslider-direction-nav a,
+.vslider.theme-elegant .vslider-direction-nav a {
+    width: 11px;
+    height: 16px;
+    top:50%;
+    background: url(arrows.png) no-repeat 0 0; 
+    opacity: 0.6;
+}
+.vslider.direction_nav-elegant .vslider-direction-nav a.vslider-next,
+.vslider.theme-elegant .vslider-direction-nav a.vslider-next {
+    background-position: 0 -16px;
+    right:-20px;
+    }
+    
+.vslider.direction_nav-elegant .vslider-direction-nav a.vslider-next:hover,
+.vslider.theme-elegant .vslider-direction-nav a.vslider-next:hover {
+	background-position: 100% -16px;
+}    
+.vslider.direction_nav-elegant .vslider-direction-nav a.vslider-prev,    
+.vslider.theme-elegant .vslider-direction-nav a.vslider-prev {
+   background-position: 0 0; 
+   left:-20px;
+}
+
+.vslider.direction_nav-elegant .vslider-direction-nav a.vslider-prev:hover,    
+.vslider.theme-elegant ul.vslider-direction-nav a.vslider-prev:hover{
+	background-position: 100% 0px;
+}
+
+
+.vslider.theme-eleganthover .vslider-next {opacity: 0.8;}
+.vslider.theme-elegant:hover .vslider-prev {opacity: 0.8; }
+.vslider.theme-elegant:hover .vslider-next:hover, .vslider.theme-elegant:hover .vslider-prev:hover {opacity: 1;}
+
+
+
+.vslider.theme-elegant .vslider-control-nav,
+.vslider.control_nav-elegant .vslider-control-nav{
+    bottom: -20px;
+}
+
+.vslider.theme-elegant .vslider-control-paging li a,
+.vslider.control_nav-elegant ol.vslider-control-paging li a{
+    width: 15px; 
+    height: 15px; 
+    display: block; 
+    background: url(control_nav.png); 
+    background-position: 0 0;
+    border-radius:0;
+    border:none;
+    box-shadow:none;
+}
+.vslider.theme-elegant .vslider-control-paging li a:hover,
+.vslider.control_nav-elegant .vslider-control-paging li a:hover{ 
+   background-position: 0 15px;
+}
+.vslider.theme-elegant .vslider-control-paging li a.vslider-active,
+.vslider.control_nav-elegant .vslider-control-paging li a.vslider-active{ 
+     background-position: 0 100%;
+    }

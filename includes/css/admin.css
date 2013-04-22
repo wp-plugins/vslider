@@ -1,0 +1,100 @@
+/*-----------------------------------------------------------------------------------------------*/
+/*                                         Backend STYLES                                        */
+/*-----------------------------------------------------------------------------------------------*/
+
+.save{
+    background:#c0ffbb;
+    color:#3f8e00;
+    padding:8px 20px;
+    font-size:12px;
+    border:1px solid #4baa00;
+    margin:10px 0;
+}
+
+.error{
+  padding:8px 20px;
+    font-size:12px;  
+}
+
+.admin_demo{
+    
+}
+
+#add-slide{
+    margin-top:10px
+}
+
+label{
+    width: 50%;
+display: block;
+float: left;
+}
+
+.theme_controls{
+    background:#EFEFEF;
+    padding:0 20px !important;
+}
+
+.image_controls{
+    padding:0 20px 0 60px !important;
+    position:relative;
+}
+.handle{
+    width:48px;
+    height:48px;
+    display:block;
+    position:absolute;
+    top:5px;
+    left:5px;
+    background: url(../images/arrow_move.png) no-repeat;
+    cursor:move;
+}
+.delete_slide{
+    width:16px;
+    height:16px;
+    display:block;
+    position:absolute;
+    bottom:15px;
+    left:15px;
+    background: url(../images/delete.png) no-repeat;
+    cursor:hand;
+}
+
+.vslider_slide_arrange{
+    width:100%;
+}
+
+.vibe_products{
+    margin:0 30px;
+}
+.vibe_products li{
+    margin:0 10px;
+}
+.product{
+    background: none repeat scroll 0 0 #F9F9F9;
+border: 1px solid #DEDEDE;
+border-radius: 3px 3px 3px 3px;
+box-shadow: 0 1px 0 #FFF inset, 0 0 20px rgba(0, 0, 0, 0.05) inset, 0 1px 2px rgba(0, 0, 0, 0.1);
+margin-bottom: 20px;
+padding:10px;
+text-shadow: 0 1px 0 #FFF;
+}
+
+.product h2{margin:5px 0 !important;}
+.free_r {
+background: url(../images/free_r.png) no-repeat;
+display: block;
+width: 80px;
+height: 79px;
+position: absolute;
+margin: -15px 0 0 91px;
+}
+
+.featured_r {
+background: url(../images/featured_r.png) no-repeat;
+display: block;
+width: 80px;
+height: 79px;
+position: absolute;
+margin: -15px 0 0 91px;
+}
